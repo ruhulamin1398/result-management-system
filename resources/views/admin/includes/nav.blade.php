@@ -24,11 +24,7 @@
                                   
                                     <div class="user-status">
 
-                                    @forelse (Auth::user()->roles->take(1) as $role)
-                                    {{$role->name}}
-                                    @empty
-                                    Not assigned
-                                    @endforelse
+                            
                                     </div>
                                     <div class="user-name dropdown-indicator">{{Auth::user()->name}}</div>
                                 </div>
@@ -56,7 +52,7 @@
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
-                                    <li><a href="{{route('user.logout')}}"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                    <li><a href="{{route('logout')}}"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                                 </ul>
                             </div>
                         </div>

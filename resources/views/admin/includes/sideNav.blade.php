@@ -22,7 +22,7 @@
                             <span class="nk-menu-text">Dashboard</span>
                         </a>
                     </li><!-- .nk-menu-item -->
-                    @role('admin')
+                 
 
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
@@ -31,16 +31,16 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{route('task.create')}}" class="nk-menu-link"><span class="nk-menu-text">Create Project Task</span></a>
+                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">Create Project Task</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{route('task.list')}}" class="nk-menu-link"><span class="nk-menu-text">Project Task List</span></a>
+                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">Project Task List</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
-                    @endrole
+                
 
-                    @role('user')
+              
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
@@ -48,12 +48,12 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{route('AssigneeTaskView')}}" class="nk-menu-link"><span class="nk-menu-text">Works</span></a>
+                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">Works</span></a>
                             </li>
                            
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
-                    @endrole
+               
 
 
 
