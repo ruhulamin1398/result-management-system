@@ -66,7 +66,7 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">semesters </span></th>
 
                     </tr>
                 </thead>
@@ -78,7 +78,7 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">semesters </span></th>
 
 
                     </tr>
@@ -92,7 +92,7 @@
                         <td class="nk-tb-col">{{$i++}}</td>
                         <td class="nk-tb-col">{{$department->title}}</td>
                         <td class="nk-tb-col">{{$department->sort_form}}</td>
-                        <td class="nk-tb-col">  <a href="#"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                        <td class="nk-tb-col">  <a href="{{route('semesters.index')}}?department_id={{$department->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
                       
                     </tr>
                     @endforeach

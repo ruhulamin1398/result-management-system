@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\department;
 use App\Models\semester;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,11 @@ class SemesterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $department= department::find($request->department_id);
+        $semesters= semester::all();
+        return view('admin.semester.index',compact('department','semesters'));
     }
 
     /**

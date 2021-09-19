@@ -1,8 +1,118 @@
 @extends('admin.includes.app')
 
 
+
+
 @section('content')
 
 
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos cupiditate rem unde sapiente consequuntur aliquid enim. Doloremque illum provident repellat quia quasi repudiandae ipsum mollitia dolores est amet nesciunt assumenda aliquam, rem veniam fuga. Delectus ullam ex placeat minus sunt, consequatur at repellat, ipsa fugit magni aut cum voluptatem explicabo architecto amet officia pariatur aliquam dolor tempore aliquid quisquam velit assumenda? Ipsam amet doloribus corrupti vero ipsum provident commodi numquam, rerum, necessitatibus quis autem quasi consequuntur iusto porro a voluptatum sed ut quas ullam fugiat nam dolorum. Aliquam reiciendis cumque ratione molestias necessitatibus distinctio quisquam, id officiis. Vitae iure nostrum reprehenderit rerum velit ut quasi possimus, perspiciatis quis ipsa cumque in, eveniet laborum. Amet nostrum quo iusto natus a! A, voluptatibus impedit vitae, ipsam sed voluptatum quisquam non dolores ut quaerat dolorum pariatur? Repellendus inventore perspiciatis optio veniam quae. Rem sit optio dolorem commodi, doloribus fugiat esse accusantium sunt fuga soluta asperiores omnis corrupti doloremque magnam hic velit a animi voluptate iusto! Autem ratione debitis sequi voluptates aliquam aspernatur quia esse voluptate deserunt quidem repudiandae sapiente itaque, iure, minima voluptas necessitatibus dicta? Debitis veritatis delectus sequi facere soluta non quos, saepe inventore voluptatem odit, ipsa laudantium dicta deserunt dolores sint voluptatum, repudiandae magni possimus eius consequuntur adipisci. Ad suscipit quis libero. Ducimus veniam cum asperiores placeat magni! Debitis dignissimos, eligendi repellat, obcaecati modi voluptas voluptate ea sint labore doloribus voluptatum impedit consequuntur culpa quisquam nostrum? Dicta totam rerum, reprehenderit amet aperiam accusamus incidunt libero soluta! Illo libero accusamus quibusdam dolore! Aliquam qui pariatur illum non quia molestias magni aliquid, suscipit cumque facere officiis voluptate. Distinctio quo cum culpa maiores alias, sequi id, eum cumque cupiditate libero facilis eaque delectus repellendus nemo architecto fugiat praesentium perferendis dicta dolor et, laboriosam officia totam. Consequuntur veritatis ab rerum sequi quisquam pariatur voluptas blanditiis. Consequatur optio tempora sunt beatae a eveniet molestias quam. Quidem quod quia quos quis, vero neque perferendis voluptatibus possimus et, nisi dicta reprehenderit eum similique, mollitia voluptatem dolorem sapiente in totam blanditiis? Doloribus, fugit tempore? Architecto eos amet voluptatum repellendus dignissimos, accusamus enim explicabo optio cumque itaque, harum sit! Dolorem distinctio dolore, asperiores incidunt deserunt, sed iure ipsum dolores quod ex doloribus nemo nostrum error, rem nam quis officia mollitia harum praesentium. Officiis hic, fugit accusamus atque commodi reiciendis sunt sequi! Asperiores fugit itaque delectus magnam officiis architecto sunt eaque perferendis repudiandae eius cum repellat, dicta maxime velit! Quam illo harum eligendi iusto sunt in maiores neque, quos dolore inventore ad quisquam dolorum, exercitationem possimus soluta. Saepe nihil officiis, ratione culpa natus maxime mollitia vero veniam magnam ducimus at similique facilis totam odit eveniet fugit iste molestias rerum expedita? Eos, illo nulla accusantium ut illum aperiam, fuga pariatur quas, perferendis id rerum. Ex vitae quas soluta, dicta ratione, beatae cumque ipsam, tempore quae excepturi laudantium necessitatibus sed nihil. Repellat dolorum debitis at tempora voluptates iste distinctio consequatur ut sint exercitationem officia soluta laudantium repudiandae ratione molestiae, et eos quibusdam ipsum numquam iure recusandae deserunt. Quas vel iusto eos natus adipisci neque modi totam porro laborum minima et iure nisi maiores soluta doloribus fuga saepe deleniti, cumque eligendi. Placeat velit perspiciatis repellendus? Reprehenderit, sunt optio dolores perspiciatis quaerat aperiam alias odit consequatur aliquam non voluptatem eveniet dignissimos cumque distinctio ab, fuga hic molestiae deleniti eum fugiat placeat provident id repellat ex. Neque sit alias itaque? Expedita aut doloribus aperiam. Delectus dolor culpa saepe atque asperiores necessitatibus adipisci sequi minus iusto obcaecati laudantium ad reiciendis repellat, inventore, officia molestias rerum eius at amet, quisquam modi. Adipisci culpa distinctio fugit, libero expedita cum? Animi officia rem, magnam laudantium quaerat itaque vitae, quia dolor tenetur dicta a ducimus nostrum consequatur! Magni dolor ea accusamus atque, consequuntur dolores earum, vitae nemo sequi labore praesentium eius cupiditate dignissimos necessitatibus doloremque debitis? Voluptate molestias quia libero ad facere porro suscipit corporis deleniti consequatur soluta, deserunt sed cum nam unde modi quasi sint. Quis perspiciatis ab reiciendis debitis quae esse, eius dolorem possimus vero distinctio. Aperiam unde laudantium delectus magnam corrupti, repellat, a est in necessitatibus, minus et aspernatur esse autem rerum voluptates cupiditate fuga perspiciatis. Architecto veritatis nobis rem ex! Est sit dolores, dicta ipsum corporis facere ea. Dolore consequuntur ullam totam rerum quaerat quia error. Expedita, soluta aperiam, consectetur quis, in tenetur omnis sapiente mollitia itaque odio aliquam eaque voluptatibus debitis error excepturi culpa ducimus atque est vitae recusandae at quibusdam laudantium earum sequi! Aspernatur libero voluptas suscipit ipsam rem quod expedita maiores exercitationem? Rerum autem, tempore similique eum non eos placeat, ducimus error rem perferendis animi voluptas quasi id possimus dolores? Eligendi aut maiores deleniti, quisquam a voluptatum, velit hic doloribus quibusdam impedit corporis dolorem numquam quia at expedita iste. Minima, mollitia? Culpa exercitationem eius consectetur dolor aliquam, beatae reiciendis amet, rerum aut eveniet blanditiis hic. Animi tempore, fugiat vitae nobis tenetur dolore assumenda saepe vel voluptate veritatis, quidem aperiam modi perspiciatis. Odit saepe ea eos omnis. Laudantium expedita vitae molestias minus dolor cum? Quae quo ea nisi voluptate quisquam nostrum in enim qui illo consequatur corporis ab odio reprehenderit, exercitationem architecto magni corrupti earum praesentium pariatur molestias labore non distinctio nihil! Ad esse, placeat nesciunt quae corporis, eius sit iure, vel adipisci minus repudiandae? Fugit sunt consequatur nam maxime! Corrupti assumenda modi eveniet dolorum sed veniam, tempora iusto quisquam quam atque officiis culpa accusamus ut ducimus quaerat magnam optio animi aliquam itaque explicabo maxime. Sapiente quas inventore reprehenderit saepe repellat nihil porro sunt error at, incidunt obcaecati nemo minus eligendi eius exercitationem quam quia suscipit quis enim? Neque perferendis sequi vitae dolores quis nulla quidem molestiae. Asperiores possimus cum harum nam, fugiat enim molestiae reprehenderit corporis pariatur modi assumenda, tempora expedita rerum maxime distinctio animi. Eius quasi ad veniam laborum error corporis commodi aliquid voluptatibus quae molestias harum tempora similique repudiandae architecto quas, hic accusantium neque consequuntur, deserunt, in adipisci officia ut aut? Labore adipisci quisquam ea. Minus totam vitae blanditiis porro temporibus esse animi ex perferendis tenetur, praesentium in magnam itaque odit consequatur, culpa ducimus id, dolorum eaque! Voluptatibus fugit consequuntur enim reiciendis!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="nk-block nk-block-lg">
+
+
+
+    <div class="nk-block-head">
+
+        @if(session('success'))
+
+        <div class="alert alert-success alert-dismissible fade show center" role="alert">
+            <strong>{{ session('success')}}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            </button>
+        </div>
+        @elseif(session('error'))
+
+
+        <div class="alert alert-danger alert-dismissible fade show center" role="alert">
+            <strong>{{ session('error')}}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            </button>
+        </div>
+        @endif
+        <div class="nk-block-head-content">
+            <h4 class="nk-block-title">{{$department->title}}</h4>
+            <!-- <div class="nk-block-des">
+                <p>All Projects And Task Details</p>
+
+                <a href="#" class="btn btn-primary">Yesterday</a>
+
+
+            </div> -->
+        </div>
+    </div>
+
+    <div class="card card-preview">
+        <div class="card-inner">
+
+            <table class="datatable-init nowrap nk-tb-list nk-tb-ulist" data-auto-responsive="true">
+
+                <thead>
+
+                    <tr class="nk-tb-item nk-tb-head">
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
+                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
+
+                    </tr>
+                </thead>
+
+
+                <tfoot>
+
+                    <tr class="nk-tb-item nk-tb-head">
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
+                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
+
+
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    @php($i =1)
+                    @foreach($semesters as $semester)
+                    <tr class="nk-tb-item ">
+
+                        <td class="nk-tb-col">{{$i++}}</td>
+                        <td class="nk-tb-col">{{$semester->title}}</td>
+                        <td class="nk-tb-col">  <a href="{{route('courses.index')}}?department_id={{$department->id}}&&semester={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                      
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection

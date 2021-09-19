@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\course;
+use App\Models\department;
+use App\Models\semester;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -12,8 +14,9 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request)
     {
+
         //
     }
 
