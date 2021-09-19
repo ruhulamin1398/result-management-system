@@ -16,7 +16,7 @@ class CreateDepartmentsTable extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('sort_form');
-            $table->string('full_form');
+            $table->string('title');
             $table->text('details')->nullable();
             $table->timestamps();
         });

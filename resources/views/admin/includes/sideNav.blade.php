@@ -6,7 +6,7 @@
         </div>
         <div class="nk-sidebar-brand">
 
-            <a href="{{route('dashboard')}}" class="logo-link nk-sidebar-logo">
+            <a href="{{route('admin')}}" class="logo-link nk-sidebar-logo">
                 <img class="logo-light logo-img" src="{{asset('backend/images/logo.png')}}" srcset="./images/logo2x.png 2x" alt="logo">
                 <img class="logo-dark logo-img" src="{{asset('backend/images/logo-dark.png')}}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
             </a>
@@ -17,27 +17,54 @@
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
                     <li class="nk-menu-item">
-                        <a href="{{route('dashboard')}}" class="nk-menu-link">
+                        <a href="{{route('admin')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
                             <span class="nk-menu-text">Dashboard</span>
                         </a>
                     </li><!-- .nk-menu-item -->
                  
+                    
+                    <li class="nk-menu-item small">
+                        <a href="{{route('departments.index')}}" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-users "></em></span>
+                            <span class="nk-menu-text  ">Departments</span>
+                        </a>
+                    </li><!-- .nk-menu-item -->
+                 
 
-                    <li class="nk-menu-item has-sub">
+
+                    <li class="nk-menu-item  has-sub ">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
-                            <span class="nk-menu-text">Projects</span>
+                            <span class="nk-menu-text">Courses</span>
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">Create Project Task</span></a>
+                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">Project Task List</span></a>
+                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">EEE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">CE</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
+
+<li class="nk-menu-item has-sub">
+    <a href="#" class="nk-menu-link nk-menu-toggle">
+        <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
+        <span class="nk-menu-text">Department</span>
+    </a>
+    <ul class="nk-menu-sub">
+        <li class="nk-menu-item">
+            <a href=" " class="nk-menu-link"><span class="nk-menu-text">Create Project Task</span></a>
+        </li>
+        <li class="nk-menu-item">
+            <a href=" " class="nk-menu-link"><span class="nk-menu-text">Project Task List</span></a>
+        </li>
+    </ul><!-- .nk-menu-sub -->
+</li><!-- .nk-menu-item -->
                 
 
               

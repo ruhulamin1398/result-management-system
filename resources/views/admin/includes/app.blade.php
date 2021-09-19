@@ -36,7 +36,7 @@
                             <div class="nk-content-body">
                             
                             
-                       @yield('admin')
+                       @yield('content')
 
 
                             </div>

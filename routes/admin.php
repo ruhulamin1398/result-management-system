@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\SemesterController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -15,6 +19,12 @@ use Inertia\Inertia;
 |
 */
  Route::get("/",function(){
-     return view('admin.includes.app');
+     return view('admin.index');
 
- });
+ })->name('admin');
+
+ Route::resource('departments', DepartmentController::class);
+ Route::resource('semesters', SemesterController::class);
+ Route::resource('students', StudentController::class);
+ Route::resource('courses', CourseController::class);
+ 
