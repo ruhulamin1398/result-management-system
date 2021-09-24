@@ -66,7 +66,7 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Reg </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Name </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">CGPA </span></th> 
+                        <!-- <th class="nk-tb-col tb-col-md"><span class="sub-text">CGPA </span></th>  -->
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Action </span></th>
 
                     </tr>
@@ -84,7 +84,7 @@
                             <td class="nk-tb-col">{{$i++}}</td>
                             <td class="nk-tb-col">{{$student->reg}}</td>
                             <td class="nk-tb-col">{{$student->name}}</td>
-                            <td class="nk-tb-col">{{$student->cgpa}}</td>
+                            <!-- <td class="nk-tb-col">{{$student->cgpa}}</td> -->
                         
  
                             <td class="nk-tb-col"> <a href="{{route('students.show',$student->id)}}" class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a> </td>
