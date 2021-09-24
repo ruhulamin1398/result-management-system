@@ -17,11 +17,14 @@ class StudentSeeder extends Seeder
         DB::table('students')->insert([
 
             [
+                'reg' => '2016351520',
                 'name' => 'Sajjad',
                 'session_id' => 1,
                 'department_id' => 2,
             ],
             [
+                
+                'reg' => '2016351522',
                 'name' => 'Tarek',
                 'session_id' => 1,
                 'department_id' => 2,
