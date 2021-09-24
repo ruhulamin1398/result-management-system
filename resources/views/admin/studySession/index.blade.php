@@ -21,7 +21,7 @@
 
 
 
-<div class="nk-block nk-block-lg"
+<div class="nk-block nk-block-lg">
 
 
 
