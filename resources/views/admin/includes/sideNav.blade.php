@@ -22,15 +22,15 @@
                             <span class="nk-menu-text">Dashboard</span>
                         </a>
                     </li><!-- .nk-menu-item -->
-                 
-                    
+
+
                     <li class="nk-menu-item small">
                         <a href="{{route('departments.index')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-users "></em></span>
                             <span class="nk-menu-text  ">Departments</span>
                         </a>
                     </li><!-- .nk-menu-item -->
-                 
+
 
 
                     <li class="nk-menu-item  has-sub ">
@@ -51,23 +51,47 @@
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
 
-<li class="nk-menu-item has-sub">
-    <a href="#" class="nk-menu-link nk-menu-toggle">
-        <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
-        <span class="nk-menu-text">Department</span>
-    </a>
-    <ul class="nk-menu-sub">
-        <li class="nk-menu-item">
-            <a href=" " class="nk-menu-link"><span class="nk-menu-text">Create Project Task</span></a>
-        </li>
-        <li class="nk-menu-item">
-            <a href=" " class="nk-menu-link"><span class="nk-menu-text">Project Task List</span></a>
-        </li>
-    </ul><!-- .nk-menu-sub -->
-</li><!-- .nk-menu-item -->
-                
+     {{--            <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
+                            <span class="nk-menu-text">Students</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="{{route('semesters.index')}}?department_id=1" class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{route('semesters.index')}}?department_id=2" class="nk-menu-link"><span class="nk-menu-text">EEE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{route('semesters.index')}}?department_id=3" class="nk-menu-link"><span class="nk-menu-text">CE</span></a>
+                            </li>
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
 
-              
+                    --}}   
+
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
+                            <span class="nk-menu-text">Result</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="{{route('study_sessions.index')}}?department_id=1" class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{route('study_sessions.index')}}?department_id=2" class="nk-menu-link"><span class="nk-menu-text">EEE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{route('study_sessions.index')}}?department_id=3" class="nk-menu-link"><span class="nk-menu-text">CE</span></a>
+                            </li>
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
+
+
+
+
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
@@ -77,10 +101,10 @@
                             <li class="nk-menu-item">
                                 <a href=" " class="nk-menu-link"><span class="nk-menu-text">Works</span></a>
                             </li>
-                           
+
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
-               
+
 
 
 

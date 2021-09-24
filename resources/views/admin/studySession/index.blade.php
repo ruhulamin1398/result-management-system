@@ -21,7 +21,7 @@
 
 
 
-<div class="nk-block nk-block-lg">
+<div class="nk-block nk-block-lg"
 
 
 
@@ -44,7 +44,7 @@
         </div>
         @endif
         <div class="nk-block-head-content">
-            <h4 class="nk-block-title">Departments</h4>
+            <h4 class="nk-block-title">Sessions</h4>
             <!-- <div class="nk-block-des">
                 <p>All Projects And Task Details</p>
 
@@ -63,11 +63,10 @@
                 <thead>
 
                     <tr class="nk-tb-item nk-tb-head">
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">semesters </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">sessions </span></th>
+                    <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
+                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">student </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th>
 
                     </tr>
                 </thead>
@@ -77,10 +76,9 @@
 
                     <tr class="nk-tb-item nk-tb-head">
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">semesters </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">sessions </span></th>
+                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">student </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th> 
 
 
                     </tr>
@@ -88,14 +86,13 @@
 
                 <tbody>
                     @php($i =1)
-                    @foreach($departments as $department)
+                    @foreach($studySessions as $session)
                     <tr class="nk-tb-item ">
 
                         <td class="nk-tb-col">{{$i++}}</td>
-                        <td class="nk-tb-col">{{$department->title}}</td>
-                        <td class="nk-tb-col">{{$department->sort_form}}</td>
-                        <td class="nk-tb-col">  <a href="{{route('semesters.index')}}?department_id={{$department->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
-                        <td class="nk-tb-col">  <a href="{{route('study_sessions.index')}}?department_id={{$department->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                        <td class="nk-tb-col">{{$session->title}}</td>
+                        <td class="nk-tb-col">  <a href="{{route('students.index')}}?department_id={{$department->id}}&&session_id={{$session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                        <td class="nk-tb-col">  <a href="{{route('semesters.index')}}?department_id={{$department->id}}&&session_id={{$session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
                       
                     </tr>
                     @endforeach

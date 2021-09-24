@@ -89,7 +89,7 @@
 
                         <td class="nk-tb-col">{{$i++}}</td>
                         <td class="nk-tb-col">{{$semester->title}}</td>
-                        <td class="nk-tb-col">  <a href="{{route('courses.index')}}?department_id={{$department->id}}&&semester={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                        <td class="nk-tb-col">  <a href="{{route('courses.index')}}?department_id={{$department->id}}&&semester_id={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
                       
                     </tr>
                     @endforeach

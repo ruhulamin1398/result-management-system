@@ -45,13 +45,13 @@
         @endif
         <div class="nk-block-head-content">
             <h4 class="nk-block-title">{{$department->title}}</h4>
-            <!-- <div class="nk-block-des">
-                <p>All Projects And Task Details</p>
+            <div class="nk-block-des">
+                <p>{{$semester->title}}</p>
 
-                <a href="#" class="btn btn-primary">Yesterday</a>
+                <!-- <a href="#" class="btn btn-primary">Yesterday</a> -->
 
 
-            </div> -->
+            </div>
         </div>
     </div>
 
@@ -64,8 +64,9 @@
 
                     <tr class="nk-tb-item nk-tb-head">
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Code</span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">title</span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">credit</span></th>
 
                     </tr>
                 </thead>
@@ -73,23 +74,19 @@
 
                 <tfoot>
 
-                    <tr class="nk-tb-item nk-tb-head">
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
-
-
-                    </tr>
+                
                 </tfoot>
 
                 <tbody>
                     @php($i =1)
-                    @foreach($semesters as $semesters)
+                    @foreach($courses as $course)
                     <tr class="nk-tb-item ">
 
                         <td class="nk-tb-col">{{$i++}}</td>
-                        <td class="nk-tb-col">{{$semesters->title}}</td>
-                        <td class="nk-tb-col">  <a href="{{route('courses.index')}}?department_id={{$department->id}}&&semester={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                        <td class="nk-tb-col">{{$course->course_code}}</td>
+                        <td class="nk-tb-col">{{$course->title}}</td>
+                        <td class="nk-tb-col">{{$course->credit}}</td>
+                       {{-- <td class="nk-tb-col">  <a href="{{route('courses.index')}}?department_id={{$department->id}}&&semester_id={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td> ---}}
                       
                     </tr>
                     @endforeach

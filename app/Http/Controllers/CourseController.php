@@ -16,6 +16,10 @@ class CourseController extends Controller
      */
     public function index( Request $request)
     {
+        $courses= course::where('semester_id',$request->semester_id)->where('department_id',$request->department_id)->get();
+        $semester=  semester::find($request->semester_id);
+        $department=  semester::find($request->department_id);
+        return view('admin.course.index',compact('courses','department','semester'));
 
         //
     }

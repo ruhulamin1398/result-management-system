@@ -2,23 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\student;
+use App\Models\department;
+use App\Models\studySession;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class StudySessionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index( Request $request )
     {
-       $students=  student::where('department_id',$request->department_id)->where('session_id',$request->session_id)->get();
-      
-       return $students;
-       return view('admin.studySession.index',compact('studySessions','department'));
-        //
+
+        $department  = department::find($request->department_id);
+   
+        $studySessions = studySession::orderBy('id', 'desc')->get();
+        // return $studySessions;
+ 
+        return view('admin.studySession.index',compact('studySessions','department'));
     }
 
     /**
@@ -45,10 +48,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\student  $student
+     * @param  \App\Models\studySession  $studySession
      * @return \Illuminate\Http\Response
      */
-    public function show(student $student)
+    public function show(studySession $studySession)
     {
         //
     }
@@ -56,10 +59,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\student  $student
+     * @param  \App\Models\studySession  $studySession
      * @return \Illuminate\Http\Response
      */
-    public function edit(student $student)
+    public function edit(studySession $studySession)
     {
         //
     }
@@ -68,10 +71,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\student  $student
+     * @param  \App\Models\studySession  $studySession
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, student $student)
+    public function update(Request $request, studySession $studySession)
     {
         //
     }
@@ -79,10 +82,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\student  $student
+     * @param  \App\Models\studySession  $studySession
      * @return \Illuminate\Http\Response
      */
-    public function destroy(student $student)
+    public function destroy(studySession $studySession)
     {
         //
     }
