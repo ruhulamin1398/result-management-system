@@ -11,6 +11,8 @@ class result extends Model
 
     function student(){
         return $this->belongsTo(student::class);
+    } function course(){
+        return $this->belongsTo(course::class);
     }
     
 }

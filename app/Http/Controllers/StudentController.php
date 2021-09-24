@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\department;
+use App\Models\result;
 use App\Models\student;
 use Illuminate\Http\Request;
 
@@ -15,9 +17,10 @@ class StudentController extends Controller
     public function index(Request $request)
     {
        $students=  student::where('department_id',$request->department_id)->where('session_id',$request->session_id)->get();
+       $department= department::find($request->department_id);
       
-       return $students;
-       return view('admin.studySession.index',compact('studySessions','department'));
+     
+       return view('admin.student.index',compact('students','department'));
         //
     }
 
@@ -50,7 +53,11 @@ class StudentController extends Controller
      */
     public function show(student $student)
     {
-        //
+
+        $results= result::where('student_id',$student->id)->get()->groupBY('semester_id');
+
+        // return $results;
+        return view('admin.student.show',compact('student','results'));
     }
 
     /**

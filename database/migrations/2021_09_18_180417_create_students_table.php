@@ -20,6 +20,7 @@ class CreateStudentsTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('session_id');
             $table->unsignedBigInteger('department_id');
+            $table->double('cgpa',8,2)->default(0);
             $table->timestamps();
         });
     }
