@@ -22,8 +22,41 @@ class UserTableSeeder extends Seeder
                 'email' => 'admin@admin.com',
                 'password' => Hash::make(1234),
             ],
+            [
+                'name' => 'Student',
+                'email' => 'student@admin.com',
+                'password' => Hash::make(1234),
+            ],
            
              
+        ]);
+
+
+
+        DB::table('roles')->insert([
+            [
+                'name' => 'admin',
+                'guard_name' => 'web',
+            ],  [
+                'name' => 'student',
+                'guard_name' => 'web',
+            ] 
+        ]);
+ 
+
+
+
+
+        DB::table('model_has_roles')->insert([
+            [
+                'role_id' => 1,
+                'model_type' => 'App\Models\User',
+                'model_id' => 1,
+            ],   [
+                'role_id' => 2,
+                'model_type' => 'App\Models\User',
+                'model_id' => 2,
+            ],
         ]);
     }
 }

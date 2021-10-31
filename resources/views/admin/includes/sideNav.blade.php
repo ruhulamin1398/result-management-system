@@ -24,6 +24,8 @@
                     </li><!-- .nk-menu-item -->
 
 
+                    @role('admin')
+
                     <li class="nk-menu-item small">
                         <a href="{{route('departments.index')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-users "></em></span>
@@ -51,7 +53,7 @@
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
 
-     {{--            <li class="nk-menu-item has-sub">
+                    <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
                             <span class="nk-menu-text">Students</span>
@@ -69,7 +71,7 @@
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
 
-                    --}}   
+
 
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
@@ -106,9 +108,24 @@
                     </li><!-- .nk-menu-item -->
 
 
+                    @endrole
+
+                    @role('student')
 
 
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+                            <span class="nk-menu-text">profile</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href=" " class="nk-menu-link"><span class="nk-menu-text">Image</span></a>
+                            </li>
 
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
+                    @endrole
 
                 </ul><!-- .nk-menu -->
             </div><!-- .nk-sidebar-menu -->
