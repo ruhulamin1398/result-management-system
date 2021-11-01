@@ -59,6 +59,11 @@
                             <span class="nk-menu-text">Students</span>
                         </a>
                         <ul class="nk-menu-sub">
+
+                        <li class="nk-menu-item">
+                                <a href="{{route('students.create')}}" class="nk-menu-link"><span class="nk-menu-text">New Student</span></a>
+                            </li>
+
                             <li class="nk-menu-item">
                                 <a href="{{route('semesters.index')}}?department_id=1" class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
                             </li>
