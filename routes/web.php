@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -25,3 +26,5 @@ Route::group(['middleware' => ['role:student','auth:sanctum']], function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::resource('student_profiles', StudentProfileController::class);

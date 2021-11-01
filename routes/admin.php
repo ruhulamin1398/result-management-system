@@ -33,6 +33,6 @@ use Inertia\Inertia;
  Route::resource('courses', CourseController::class); 
  Route::resource('study_sessions', StudySessionController::class);
  Route::resource('results', ResultController::class);
-
+ 
 
  

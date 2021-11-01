@@ -9,4 +9,17 @@ class student extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+
+
+
+    public function session()
+    {
+        return $this->belongsTo(studySession::class,'session_id','id');
+    }
+    public function department()
+    {
+        return $this->belongsTo(department::class);
+    }
+
 }
