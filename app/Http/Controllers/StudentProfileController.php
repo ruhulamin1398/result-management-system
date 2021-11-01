@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\result;
 use App\Models\student;
 use Faker\Provider\ar_JO\Company;
 use Illuminate\Http\Request;
@@ -16,11 +17,12 @@ class StudentProfileController extends Controller
      */
     public function index()
     {
-     $student = Auth::user();
+        $student = Auth::user();
+        //  return "dsafas";
+        $results =  result::where('student_id', $student->profile->id)->get()->groupBy('semester_id');
+        //   return $results;
 
-    //  return $student->profile->department;
-
-        return view('student.index',compact('student'));
+        return view('student.index', compact('student', 'results'));
     }
 
     /**

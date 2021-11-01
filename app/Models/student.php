@@ -21,5 +21,12 @@ class student extends Model
     {
         return $this->belongsTo(department::class);
     }
+    public function results()
+    {
+        return $this->hasMany(result::class);
+    }public function semester()
+    {
+        return $this->belongsTo(semester::class);
+    }
 
 }

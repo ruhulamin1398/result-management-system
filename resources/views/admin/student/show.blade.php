@@ -54,8 +54,10 @@
             @foreach($resultList as $result2)
 
                 @php
+                if($result2->point !=0){
                 $credits2 += $result2->course->credit;
                 $points2 += ($result2->point * $result2->course->credit);
+                }
                 @endphp
 
                 <!-- <p>   {{$credits2}}    </p>
@@ -68,14 +70,23 @@
 
 
 
-
+                 @php
+            $cgpa=0;
+            
+            if($credits2 !=0){
+          
+                $cgpa =   floor(($points2/$credits2)*100)/100;
+             }
+             $student->cgpa= $cgpa;
+                $student->save();
+            @endphp
 
 
 
 
 
         <div class="nk-block-head-content">
-            <h4 class="nk-block-title"> {{$student->name}} | {{$student->reg}}   (  {{floor(($points2/$credits2)*100)/100}}    ) </h4>
+            <h4 class="nk-block-title"> {{$student->name}} | {{$student->reg}}   ( {{$cgpa}}  ) </h4>
             <!-- <div class="nk-block-des">
                 <p>All Projects And Task Details</p>
 
@@ -100,12 +111,15 @@
             @foreach($results as $result)
 
                 @php
+                if($result->point !=0){
                 $credits += $result->course->credit;
                 $points += ($result->point * $result->course->credit);
+
+                }
                 @endphp
             @endforeach
 
-            <h5> {{   $semester->title}} (  {{floor(($points/$credits)*100)/100}}    )</h5>
+            <h5> {{   $semester->title}} (  @if($credits==0) 0 @else {{floor(($points/$credits)*100)/100}} @endif    )</h5>
 
             <table class="datatable-init nowrap nk-tb-list nk-tb-ulist" data-auto-responsive="true">
 

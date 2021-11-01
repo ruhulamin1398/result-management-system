@@ -21,10 +21,9 @@ Route::group(['middleware' => ['role:student','auth:sanctum']], function () {
     Route::get('/', function () {
         return view('student.index');
     });
-    //
+    Route::resource('student_profiles', StudentProfileController::class);
 });
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::resource('student_profiles', StudentProfileController::class);

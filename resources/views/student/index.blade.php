@@ -130,32 +130,197 @@
 
           
         
-        <table class="table">
+    
+
+
+    @foreach ($results as $semester)
+    <div class="section-title">
+          <h2> semester {{$semester->first()->semester_id}} </h2>
+          
+        </div>
+
+
+    <table class="table">
     <thead>
+
+  
       <tr>
-        <th>Firstname</th>
+        <th>s</th>
         <th>Lastname</th>
         <th>Email</th>
       </tr>
+
+    
+      
     </thead>
     <tbody>
+    @foreach ($semester as $result)
       <tr>
-        <td>John</td>
+        <td>{{ $result}}</td>
         <td>Doe</td>
         <td>john@example.com</td>
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
+      @endforeach
+      </tbody>
   </table>
+      @endforeach
+      
+
+
+
+
+
+
+
+
+//////////////////
+
+@php
+    $credits2=0;
+    $points2=0;
+
+    @endphp
+@foreach($results as $resultList)
+ 
+
+    @foreach($resultList as $result2)
+
+        @php
+        if($result2->point !=0){
+        $credits2 += $result2->course->credit;
+        $points2 += ($result2->point * $result2->course->credit);
+        }
+        @endphp
+
+        <!-- <p>   {{$credits2}}    </p>
+<p>    {{$points2}}  </p>
+--- -->
+        @endforeach     
+         @endforeach
+
+
+
+
+
+         @php
+    $cgpa=0;
+    
+    if($credits2 !=0){
+  
+        $cgpa =   floor(($points2/$credits2)*100)/100;
+     }
+     // $student->cgpa= $cgpa;
+      //  $student->save();
+    @endphp
+
+
+
+
+
+<div class="nk-block-head-content">
+    <h4 class="nk-block-title"> {{$student->name}} | {{$student->reg}}   ( {{$cgpa}}  ) </h4>
+    <!-- <div class="nk-block-des">
+        <p>All Projects And Task Details</p>
+
+        <a href="#" class="btn btn-primary">Yesterday</a>
+
+
+    </div> -->
+</div>
+</div>
+
+<div class="card card-preview">
+<div class="card-inner">
+
+    @foreach($results as $key=>$results)
+    @php
+    $semester= App\Models\semester::find($key);
+    $credits=0;
+    $points=0;
+
+    @endphp
+
+    @foreach($results as $result)
+
+        @php
+        if($result->point !=0){
+        $credits += $result->course->credit;
+        $points += ($result->point * $result->course->credit);
+
+        }
+        @endphp
+    @endforeach
+
+    <h5> {{   $semester->title}} (  @if($credits==0) 0 @else {{floor(($points/$credits)*100)/100}} @endif    )</h5>
+
+    <table class="datatable-init nowrap nk-tb-list nk-tb-ulist table" data-auto-responsive="true">
+
+        <thead>
+
+            <tr class="nk-tb-item nk-tb-head">
+                <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
+                <th class="nk-tb-col tb-col-mb"><span class="sub-text">Course Code </span></th>
+                <th class="nk-tb-col tb-col-md"><span class="sub-text">Course Title </span></th>
+                <th class="nk-tb-col tb-col-md"><span class="sub-text">Credit </span></th>
+                <th class="nk-tb-col tb-col-md"><span class="sub-text">Grade </span></th>
+                <th class="nk-tb-col tb-col-md"><span class="sub-text">Point </span></th>
+
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+
+            @php
+
+            $i =1;
+            $credits=0;
+            $points=0;
+
+            @endphp
+            @foreach($results as $result)
+
+           
+            @csrf
+            <tr class="nk-tb-item ">
+
+                <td class="nk-tb-col">{{$i++}}</td>
+                <td class="nk-tb-col">{{$result->course->course_code}}</td>
+                <td class="nk-tb-col">{{$result->course->title}}</td>
+                <td class="nk-tb-col">{{$result->course->credit}}</td>
+                <td class="nk-tb-col">{{$result->letter}}</td>
+                <td class="nk-tb-col">{{$result->point}}</td>
+
+            </tr>
+
+            @endforeach
+
+
+
+
+        </tbody>
+
+
+
+
+
+    </table>
+
+
+    @endforeach
+
+
+
+
+
+
+
+
+
+
+    //////////////////////////////////
+  
 
 
         </div>
