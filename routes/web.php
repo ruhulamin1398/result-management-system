@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\StudentProfileController;
+use App\Models\result;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -16,11 +18,29 @@ use Inertia\Inertia;
 |
 */
 
-Route::group(['middleware' => ['role:student','auth:sanctum']], function () {
+
+
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', function () {
-        return view('student.index');
-    });
+        
+        if( Auth::user()->hasRole('admin')){
+            return redirect(route('admin'));
+        }
+        return redirect(route('student_profiles.index'));
+ 
+
+
+    })->name('index');
+    
+});
+
+
+
+
+Route::group(['middleware' => ['role:student','auth:sanctum']], function () {
+
+   
     Route::resource('student_profiles', StudentProfileController::class);
 });
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
