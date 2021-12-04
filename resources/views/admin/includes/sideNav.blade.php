@@ -32,6 +32,12 @@
                             <span class="nk-menu-text  ">Departments</span>
                         </a>
                     </li><!-- .nk-menu-item -->
+                    <li class="nk-menu-item small">
+                        <a href="{{route('study_sessions.create')}}" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-users "></em></span>
+                            <span class="nk-menu-text  ">Sessions</span>
+                        </a>
+                    </li><!-- .nk-menu-item -->
 
 
 

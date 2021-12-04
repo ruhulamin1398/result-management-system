@@ -31,7 +31,8 @@ class StudySessionController extends Controller
      */
     public function create()
     {
-        //
+        $studySessions = studySession::orderBy('id', 'desc')->get();
+        return view('admin.session.create',compact('studySessions'));
     }
 
     /**
@@ -42,7 +43,10 @@ class StudySessionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $studySessions = new studySession;
+        $studySessions->title = $request->title;
+        $studySessions->save();
+        return redirect(route('study_sessions.create'));
     }
 
     /**
@@ -53,7 +57,7 @@ class StudySessionController extends Controller
      */
     public function show(studySession $studySession)
     {
-        //
+        /////
     }
 
     /**
@@ -64,7 +68,7 @@ class StudySessionController extends Controller
      */
     public function edit(studySession $studySession)
     {
-        //
+        return view('admin.session.edit',compact('studySession'));
     }
 
     /**
@@ -76,7 +80,10 @@ class StudySessionController extends Controller
      */
     public function update(Request $request, studySession $studySession)
     {
-        //
+       
+        $studySession->title = $request->title;
+        $studySession->save();
+        return redirect(route('study_sessions.create'));
     }
 
     /**
