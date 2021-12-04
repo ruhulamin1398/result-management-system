@@ -28,7 +28,7 @@
         </div>
         @endif
         <div class="nk-block-head-content">
-            <h4 class="nk-block-title">New Session</h4>
+            <h4 class="nk-block-title">Update Session</h4>
             <!-- <div class="nk-block-des">
                 <p>All Projects And Task Details</p>
 
