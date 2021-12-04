@@ -40,63 +40,101 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             </button>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         @endif
 
 
         @php
-            $credits2=0;
-            $points2=0;
+        $credits2=0;
+        $points2=0;
 
-            @endphp
+        @endphp
         @foreach($results as $resultList)
-         
 
-            @foreach($resultList as $result2)
 
-                @php
-                if($result2->point !=0){
-                $credits2 += $result2->course->credit;
-                $points2 += ($result2->point * $result2->course->credit);
-                }
-                @endphp
+        @foreach($resultList as $result2)
 
-                <!-- <p>   {{$credits2}}    </p>
+        @php
+        if($result2->point !=0){
+        $credits2 += $result2->course->credit;
+        $points2 += ($result2->point * $result2->course->credit);
+        }
+        @endphp
+
+        <!-- <p>   {{$credits2}}    </p>
 <p>    {{$points2}}  </p>
 --- -->
-                @endforeach     
-                 @endforeach
+        @endforeach
+        @endforeach
 
 
 
 
 
-                 @php
-            $cgpa=0;
-            
-            if($credits2 !=0){
-          
-                $cgpa =   floor(($points2/$credits2)*100)/100;
-             }
-             $student->cgpa= $cgpa;
-                $student->save();
-            @endphp
+        @php
+        $cgpa=0;
+
+        if($credits2 !=0){
+
+        $cgpa = floor(($points2/$credits2)*100)/100;
+        }
+        $student->cgpa= $cgpa;
+        $student->save();
+        @endphp
 
 
 
 
 
         <div class="nk-block-head-content">
-            <h4 class="nk-block-title"> {{$student->name}} | {{$student->reg}}   ( {{$cgpa}}  ) </h4>
-            <!-- <div class="nk-block-des">
-                <p>All Projects And Task Details</p>
+            <h4 class="nk-block-title"> {{$student->name}} | {{$student->reg}} ( {{$cgpa}} ) </h4>
+            <div class="nk-block-des">
+                
+<p>
+</p>             <a href="{{route('students.edit',$student->id)}}" class="btn btn-primary">Edit Profile</a>
 
-                <a href="#" class="btn btn-primary">Yesterday</a>
 
-
-            </div> -->
+            </div>
         </div>
     </div>
 
+<div class="container p-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <ul>
+
+                <li><i class="bi bi-chevron-right"></i> <strong>Registration Number:</strong> <span>{{$student->reg}}</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{$student ->phone}}</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Sex</strong> <span>{{$student ->sex}}</span></li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Address</strong> <span>{{$student ->address}}</span></li>
+
+                <li><i class="bi bi-chevron-right"></i> <strong>Session:</strong> <span>{{$student ->session->title}}</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Department:</strong> <span>{{$student ->department->title}}</span></li>
+            </ul>
+        </div>
+    </div>
+    </div>
     <div class="card card-preview">
         <div class="card-inner">
 
@@ -110,16 +148,16 @@
 
             @foreach($results as $result)
 
-                @php
-                if($result->point !=0){
-                $credits += $result->course->credit;
-                $points += ($result->point * $result->course->credit);
+            @php
+            if($result->point !=0){
+            $credits += $result->course->credit;
+            $points += ($result->point * $result->course->credit);
 
-                }
-                @endphp
+            }
+            @endphp
             @endforeach
 
-            <h5> {{   $semester->title}} (  @if($credits==0) 0 @else {{floor(($points/$credits)*100)/100}} @endif    )</h5>
+            <h5> {{ $semester->title}} ( @if($credits==0) 0 @else {{floor(($points/$credits)*100)/100}} @endif )</h5>
 
             <table class="datatable-init nowrap nk-tb-list nk-tb-ulist" data-auto-responsive="true">
 
@@ -149,7 +187,7 @@
                     @endphp
                     @foreach($results as $result)
 
-                   
+
                     @csrf
                     <tr class="nk-tb-item ">
 

@@ -27,6 +27,9 @@ class student extends Model
     }public function semester()
     {
         return $this->belongsTo(semester::class);
+    }public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
 }

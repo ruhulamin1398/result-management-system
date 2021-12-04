@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\department;
 use App\Models\result;
 use App\Models\student;
+use App\Models\studySession;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -31,7 +34,10 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('admin.student.create');
+        $departments = department::all();
+        $study_sessions = studySession::orderBy('id','desc')->get();
+
+        return view('admin.student.create',compact('study_sessions','departments'));
     }
 
     /**
@@ -42,7 +48,32 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make(1234);
+        $user->save();
+
+        
+
+
+        $student = new student;
+        $student->name = $request->name;
+        $student->reg = $request->reg;
+        $student->phone = $request->phone;
+        $student->sex = $request->sex;
+        $student->address = $request->address;
+        $student->user_id = $user->id;
+        $student->session_id = $request->session_id;
+        $student->department_id = $request->department_id;
+
+        $student->save();
+
+        return redirect(route('students.show',$student->id));
+
+        // return $student;
         //
     }
 
@@ -69,7 +100,10 @@ class StudentController extends Controller
      */
     public function edit(student $student)
     {
-        //
+        $departments = department::all();
+        $study_sessions = studySession::orderBy('id','desc')->get();
+
+        return view('admin.student.edit',compact('study_sessions','departments','student'));
     }
 
     /**
@@ -81,7 +115,21 @@ class StudentController extends Controller
      */
     public function update(Request $request, student $student)
     {
-        //
+      
+
+        
+        $student->name = $request->name;
+        $student->reg = $request->reg;
+        $student->phone = $request->phone;
+        $student->sex = $request->sex;
+        $student->address = $request->address;
+        $student->session_id = $request->session_id;
+        $student->department_id = $request->department_id;
+
+        $student->save();
+
+        return redirect(route('students.show',$student->id));
+
     }
 
     /**
