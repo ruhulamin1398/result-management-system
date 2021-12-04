@@ -67,7 +67,7 @@
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Reg </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Attendance </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Term Test </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Written </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Final </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Total </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Action </span></th>
 

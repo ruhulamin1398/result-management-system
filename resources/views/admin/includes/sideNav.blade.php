@@ -65,13 +65,13 @@
                             </li>
 
                             <li class="nk-menu-item">
-                                <a href="{{route('semesters.index')}}?department_id=1" class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
+                                <a href="{{route('study_sessions.index')}}?department_id=1" class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{route('semesters.index')}}?department_id=2" class="nk-menu-link"><span class="nk-menu-text">EEE</span></a>
+                                <a href="{{route('study_sessions.index')}}?department_id=2" class="nk-menu-link"><span class="nk-menu-text">EEE</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{route('semesters.index')}}?department_id=3" class="nk-menu-link"><span class="nk-menu-text">CE</span></a>
+                                <a href="{{route('study_sessions.index')}}?department_id=3" class="nk-menu-link"><span class="nk-menu-text">CE</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
