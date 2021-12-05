@@ -16,13 +16,16 @@
         <div class="nk-sidebar-content">
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
+                    
+                @role('student')
                     <li class="nk-menu-item">
-                        <a href="{{route('admin')}}" class="nk-menu-link">
+                        <a href="{{route('index')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
-                            <span class="nk-menu-text">Dashboard</span>
+                            <span class="nk-menu-text">Back to profile </span>
                         </a>
                     </li><!-- .nk-menu-item -->
 
+                    @endrole
 
                     @role('admin')
 

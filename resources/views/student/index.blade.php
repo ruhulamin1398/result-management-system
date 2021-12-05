@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>iPortfolio Bootstrap Template - Index</title>
+  <title>Student Profile</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,20 +27,13 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('student/assets/css/style.css')}}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio - v3.6.0
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-  <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
 
@@ -61,6 +54,7 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Profile</span></a></li>
           <li><a href="#result" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Result</span></a></li>
+          <li><a href="{{route('enroll.index')}}" class="nav-link scrollto"><i class="bx bx-book"></i> <span>Enroll Course</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -75,11 +69,11 @@
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
+  <main id="main" class="p-4">
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container">
+      <div class="container" >
 
         <div class="section-title">
           <h2>About</h2>
@@ -182,7 +176,7 @@
           </div>
         </div>
 
-        <div class="card card-preview">
+        <div class="card card-preview p-4">
           <div class="card-inner">
 
             @foreach($results as $key=>$results)
