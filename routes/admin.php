@@ -2,10 +2,11 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DepartmentStudySessionController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\StudySessionController;
+use App\Http\Controllers\StudySessionController; 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,6 +33,7 @@ use Inertia\Inertia;
  Route::resource('students', StudentController::class);
  Route::resource('courses', CourseController::class); 
  Route::resource('study_sessions', StudySessionController::class);
+ Route::resource('department_study_sessions', DepartmentStudySessionController::class);
  Route::resource('results', ResultController::class);
  
 

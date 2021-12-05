@@ -67,6 +67,7 @@
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">student </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">offer course </span></th> 
 
                     </tr>
                 </thead>
@@ -79,6 +80,7 @@
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">student </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Offer course </span></th> 
 
 
                     </tr>
@@ -86,13 +88,29 @@
 
                 <tbody>
                     @php($i =1)
-                    @foreach($studySessions as $session)
+                    @foreach($department->studySessions as $studySession)
+
+                 
                     <tr class="nk-tb-item ">
 
-                        <td class="nk-tb-col">{{$i++}}</td>
-                        <td class="nk-tb-col">{{$session->title}}</td>
-                        <td class="nk-tb-col">  <a href="{{route('students.index')}}?department_id={{$department->id}}&&session_id={{$session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
-                        <td class="nk-tb-col">  <a href="{{route('semesters.index')}}?department_id={{$department->id}}&&session_id={{$session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                        <td class="nk-tb-col">{{$i++}}    </td>
+                        <td class="nk-tb-col">{{$studySession->session->title}}</td>
+
+                    
+                        <td class="nk-tb-col">  <a href="{{route('students.index')}}?department_id={{$department->id}}&&session_id={{$studySession->session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                        <td class="nk-tb-col">  <a href="{{route('semesters.index')}}?department_id={{$department->id}}&&session_id={{$studySession->session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">result</a>  </td>
+                        
+                       
+                       @if($studySession->is_open==0)
+                       <td class="nk-tb-col">  <a href="{{route('department_study_sessions.edit',$studySession->id)}}"  class="btn btn-danger btn-sm p-1" style="padding: 2px;">Closed </a>  </td>
+                       
+                       @else
+                       <td class="nk-tb-col">  <a href="{{route('department_study_sessions.edit',$studySession->id)}}" class="btn btn-success btn-sm p-1" style="padding: 2px;">Opened </a>  </td>
+                       
+                       @endif
+                        
+                    
+                      
                       
                     </tr>
                     @endforeach

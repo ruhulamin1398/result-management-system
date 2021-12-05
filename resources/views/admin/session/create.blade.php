@@ -73,7 +73,7 @@
                   
                     <div class="col-4">
                         <div class="form-group">
-                            <button type="submit" class="btn btn-lg btn-primary">Save Informations</button>
+                            <button type="submit" class="btn btn-lg btn-primary">Create Session</button>
                         </div>
                     </div>
                 </div>

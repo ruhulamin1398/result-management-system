@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+ 
 use App\Models\student;
 use Illuminate\Database\Seeder;
 
@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             StudentSeeder::class,
             StudySessionSeeder::class,
             ResultSeeder::class,
+            DepartmentStudySessionSeeder::class,
         ]);
 
     }

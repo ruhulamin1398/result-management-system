@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\department;
+use App\Models\departmentStudySession;
 use App\Models\studySession;
 use Illuminate\Http\Request;
 
@@ -18,10 +19,12 @@ class StudySessionController extends Controller
 
         $department  = department::find($request->department_id);
    
-        $studySessions = studySession::orderBy('id', 'desc')->get();
-        // return $studySessions;
+        // $studySessions = studySession::orderBy('id', 'desc')->get();
+        
+
+        //  return $department->studySessions;
  
-        return view('admin.studySession.index',compact('studySessions','department'));
+        return view('admin.studySession.index',compact('department'));
     }
 
     /**
@@ -43,9 +46,51 @@ class StudySessionController extends Controller
      */
     public function store(Request $request)
     {
-        $studySessions = new studySession;
-        $studySessions->title = $request->title;
-        $studySessions->save();
+        // $studySessions = new studySession;
+        // $studySessions->title = $request->title;
+        // $studySessions->save();
+
+        // $departmentStudySession = new departmentStudySession;
+        // $departmentStudySession->department_id = 1;
+        // $departmentStudySession->session_id = $studySessions->id;
+        // $departmentStudySession->save();
+
+        // $departmentStudySession = new departmentStudySession;
+        // $departmentStudySession->department_id = 2;
+        // $departmentStudySession->session_id = $studySessions->id;
+        // $departmentStudySession->save();
+
+        // $departmentStudySession = new departmentStudySession;
+        // $departmentStudySession->department_id = 3;
+        // $departmentStudySession->session_id = $studySessions->id;
+        // $departmentStudySession->save();
+        
+
+
+
+
+       
+
+
+        for(  $i=1; $i<=6; $i++  ){
+
+
+        $departmentStudySession = new departmentStudySession;
+        $departmentStudySession->department_id = 1;
+        $departmentStudySession->session_id = $i;
+        $departmentStudySession->save();
+
+        $departmentStudySession = new departmentStudySession;
+        $departmentStudySession->department_id = 2;
+        $departmentStudySession->session_id = $i;
+        $departmentStudySession->save();
+
+        $departmentStudySession = new departmentStudySession;
+        $departmentStudySession->department_id = 3;
+        $departmentStudySession->session_id = $i;
+        $departmentStudySession->save();
+
+        }
         return redirect(route('study_sessions.create'));
     }
 
