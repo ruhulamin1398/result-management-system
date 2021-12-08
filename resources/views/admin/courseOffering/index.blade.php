@@ -6,7 +6,25 @@
 @section('content')
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="nk-block nk-block-lg">
+
+
+
     <div class="nk-block-head">
 
         @if(session('success'))
@@ -26,7 +44,7 @@
         </div>
         @endif
         <div class="nk-block-head-content">
-            <h4 class="nk-block-title">{{$department->title}}</h4>
+            <h4 class="nk-block-title">Departments</h4>
             <!-- <div class="nk-block-des">
                 <p>All Projects And Task Details</p>
 
@@ -36,7 +54,7 @@
             </div> -->
         </div>
     </div>
-
+{{---
     <div class="card card-preview">
         <div class="card-inner">
 
@@ -46,9 +64,10 @@
 
                     <tr class="nk-tb-item nk-tb-head">
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Course offer </span></th>
+                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">semesters </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">sessions </span></th>
 
                     </tr>
                 </thead>
@@ -58,9 +77,10 @@
 
                     <tr class="nk-tb-item nk-tb-head">
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Course offer </span></th>
+                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">semesters </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">sessions </span></th>
 
 
                     </tr>
@@ -68,31 +88,37 @@
 
                 <tbody>
                     @php($i =1)
-                    @foreach($semesters as $semester)
+                    @foreach($departments as $department)
                     <tr class="nk-tb-item ">
 
                         <td class="nk-tb-col">{{$i++}}</td>
-                        <td class="nk-tb-col">{{$semester->title}}</td>
-                        <td class="nk-tb-col">  <a href="{{route('courses.index')}}?department_id={{$department->id}}&&semester_id={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
-                        
-                        @if(1)
-                         
-                        <td class="nk-tb-col">  <a href="{{route('course-offerings.index')}}?department_id={{$department->id}}&&semester_id={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">Open</a>  </td>
-                     
-                        @else 
-                         
-                        <td class="nk-tb-col">  <a href="{{route('course-offerings.index')}}?department_id={{$department->id}}&&semester_id={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">Closed</a>  </td>
-                     
-                        @endif
-
-                        
+                        <td class="nk-tb-col">{{$department->title}}</td>
+                        <td class="nk-tb-col">{{$department->sort_form}}</td>
+                        <td class="nk-tb-col">  <a href="{{route('semesters.index')}}?department_id={{$department->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                        <td class="nk-tb-col">  <a href="{{route('study_sessions.index')}}?department_id={{$department->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
+                      
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+    --}}
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

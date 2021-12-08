@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CourseOfferingController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DepartmentStudySessionController;
 use App\Http\Controllers\ResultController;
@@ -35,6 +36,9 @@ use Inertia\Inertia;
  Route::resource('study_sessions', StudySessionController::class);
  Route::resource('department_study_sessions', DepartmentStudySessionController::class);
  Route::resource('results', ResultController::class);
+
+ 
+ Route::resource('course-offerings', CourseOfferingController::class);
  
 
  

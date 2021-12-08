@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Seeders;
- 
+
+use App\Http\Controllers\CourseOfferingController;
 use App\Models\student;
 use Illuminate\Database\Seeder;
 
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
             StudySessionSeeder::class,
             ResultSeeder::class,
             DepartmentStudySessionSeeder::class,
+            CourseOfferingSeeder::class,
         ]);
 
     }

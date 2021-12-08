@@ -1,24 +1,6 @@
 @extends('admin.includes.app')
 
-
-
-
 @section('content')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div class="nk-block nk-block-lg">
@@ -55,6 +37,71 @@
         </div>
     </div>
 
+
+
+
+    <div class="card card-preview">
+        <div class="card-inner">
+            <form action="{{route('courses.store')}}" method="post">
+                @csrf
+
+                <input type="text" name="department_id" value="{{$department->id}}" class="form-control" hidden>
+                <input type="text" name="semester_id" value="{{$semester->id}}" class="form-control" hidden>
+
+
+                <div class="row g-4">
+                    <div class=" col-12 col-lg-5 ">
+                        <div class="form-group">
+                            <div class="form-control-wrap">
+                                <input type="text" placeholder="Course Code" name="course_code" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-control-wrap">
+                                <input type="text" placeholder="Course Title " name="title" class="form-control" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class=" col-12 col-lg-5 ">
+                        <div class="form-group">
+                            <div class="form-control-wrap">
+                                <input type="text" placeholder="Credit" name="credit" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-control-wrap ">
+                                <div class="form-control-select">
+                                    <select class="form-control" name="type" id="default-06">
+                                        <option value="1">Theory</option>
+                                        <option value="2">Lab</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-2 mt-4">
+
+
+                        <div class="form-group">
+                            <div class="form-control-wrap">
+                                <button type="submit" class="btn  btn-primary">Create Course</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
     <div class="card card-preview">
         <div class="card-inner">
 
@@ -75,7 +122,7 @@
 
                 <tfoot>
 
-                
+
                 </tfoot>
 
                 <tbody>
@@ -87,8 +134,8 @@
                         <td class="nk-tb-col">{{$course->course_code}}</td>
                         <td class="nk-tb-col">{{$course->title}}</td>
                         <td class="nk-tb-col">{{$course->credit}}</td>
-                     <td class="nk-tb-col">  <a href="{{route('results.index')}}?course_id={{$course->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>  
-                      
+                        <td class="nk-tb-col"> <a href="{{route('results.index')}}?course_id={{$course->id}}" class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a> </td>
+
                     </tr>
                     @endforeach
                 </tbody>

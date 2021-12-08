@@ -18,7 +18,7 @@ class CourseController extends Controller
     {
         $courses= course::where('semester_id',$request->semester_id)->where('department_id',$request->department_id)->get();
         $semester=  semester::find($request->semester_id);
-        $department=  semester::find($request->department_id);
+        $department=  department::find($request->department_id);
         return view('admin.course.index',compact('courses','department','semester'));
 
         //
@@ -42,7 +42,16 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $course = new course;
+      $course->course_code = $request->course_code;
+      $course->title = $request->title;
+      $course->type = $request->type;
+      $course->credit = $request->credit;
+      $course->semester_id = $request->semester_id;
+      $course->department_id = $request->department_id;
+      $course->save();
+      return back();
+
     }
 
     /**
