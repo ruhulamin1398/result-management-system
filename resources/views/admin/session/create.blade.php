@@ -108,8 +108,11 @@
 
                     <tr class="nk-tb-item nk-tb-head">
                     <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>  
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Action </span></th> 
+                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Action </span></th>   
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">CSE (semester) </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">EEE (semester) </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">CE (semester) </span></th> 
 
 
                     </tr>
@@ -122,6 +125,9 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Action </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">CSE (semester) </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">EEE (semester) </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">CE (semester) </span></th> 
 
 
                     </tr>
@@ -134,8 +140,43 @@
 
                         <td class="nk-tb-col">{{$i++}}</td>
                         <td class="nk-tb-col">{{$session->title}}</td>
-                        <td class="nk-tb-col">  <a href="{{route('study_sessions.edit',$session->id)}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">edit</a>  </td> 
-                      
+
+
+                        <td class="nk-tb-col">  <a href="{{route('study_sessions.edit',$session->id)}}"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">edit</a>  </td> 
+                   
+                        <td class="nk-tb-col">  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=1"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">1st</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=2"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">2nd</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=3"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">3rd</a>  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=4"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">4th</a>
+                            <br> 
+                            <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=5"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">5th</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=6"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">6th</a>  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=7"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">7th</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=8"  class="btn btn-success btn-sm p-1 mt-1 mt-1" style="padding: 2px;">8th</a>
+                          </td> 
+                        <td class="nk-tb-col">  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=2&&session_id={{$session->id}}&&semester_id=1"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">1st</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=2&&session_id={{$session->id}}&&semester_id=2"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">2nd</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=2&&session_id={{$session->id}}&&semester_id=3"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">3rd</a>  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=2&&session_id={{$session->id}}&&semester_id=4"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">4th</a>
+                           <br> 
+                            <a href="{{route('session_semester_courses.index')}}?department_id=2&&session_id={{$session->id}}&&semester_id=5"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">5th</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=2&&session_id={{$session->id}}&&semester_id=6"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">6th</a>  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=2&&session_id={{$session->id}}&&semester_id=7"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">7th</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=2&&session_id={{$session->id}}&&semester_id=8"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">8th</a>
+                          </td> 
+                        <td class="nk-tb-col">  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=3&&session_id={{$session->id}}&&semester_id=1"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">1st</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=3&&session_id={{$session->id}}&&semester_id=2"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">2nd</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=3&&session_id={{$session->id}}&&semester_id=3"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">3rd</a>  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=3&&session_id={{$session->id}}&&semester_id=4"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">4th</a>
+                            <br>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=3&&session_id={{$session->id}}&&semester_id=5"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">5th</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=3&&session_id={{$session->id}}&&semester_id=6"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">6th</a>  
+                            <a href="{{route('session_semester_courses.index')}}?department_id=3&&session_id={{$session->id}}&&semester_id=7"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">7th</a>
+                            <a href="{{route('session_semester_courses.index')}}?department_id=3&&session_id={{$session->id}}&&semester_id=8"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">8th</a>
+                          </td>    
                     </tr>
                     @endforeach
                 </tbody>
