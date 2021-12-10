@@ -15,6 +15,11 @@ class CreateSessionSemesterCoursesTable extends Migration
     {
         Schema::create('session_semester_courses', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('session_id');
+            $table->unsignedBigInteger('department_id');
+            $table->unsignedBigInteger('semester_id');
+            $table->unsignedBigInteger('course_id');
+            $table->integer('is_active')->default(0);
             $table->timestamps();
         });
     }

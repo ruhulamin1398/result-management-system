@@ -114,6 +114,7 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Code</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">title</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">credit</span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Type</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">result</span></th>
 
                     </tr>
@@ -134,6 +135,16 @@
                         <td class="nk-tb-col">{{$course->course_code}}</td>
                         <td class="nk-tb-col">{{$course->title}}</td>
                         <td class="nk-tb-col">{{$course->credit}}</td>
+                        <td class="nk-tb-col">
+                            @if($course->type==1)
+                            Theory
+                            @else
+                            Lab
+                            @endif
+
+
+
+                        </td>
                         <td class="nk-tb-col"> <a href="{{route('results.index')}}?course_id={{$course->id}}" class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a> </td>
 
                     </tr>
