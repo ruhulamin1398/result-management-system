@@ -48,7 +48,6 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Course offer </span></th>
 
                     </tr>
                 </thead>
@@ -60,7 +59,6 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Courses </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Course offer </span></th>
 
 
                     </tr>
@@ -75,15 +73,7 @@
                         <td class="nk-tb-col">{{$semester->title}}</td>
                         <td class="nk-tb-col">  <a href="{{route('courses.index')}}?department_id={{$department->id}}&&semester_id={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
                         
-                        @if(1)
-                         
-                        <td class="nk-tb-col">  <a href="{{route('course-offerings.index')}}?department_id={{$department->id}}&&semester_id={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">Open</a>  </td>
                      
-                        @else 
-                         
-                        <td class="nk-tb-col">  <a href="{{route('course-offerings.index')}}?department_id={{$department->id}}&&semester_id={{$semester->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">Closed</a>  </td>
-                     
-                        @endif
 
                         
                     </tr>

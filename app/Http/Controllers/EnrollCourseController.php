@@ -22,6 +22,9 @@ class EnrollCourseController extends Controller
     {
         $profile = Auth::user()->profile;
         $courseOffering = courseOffering::where('department_id', $profile->department_id)->where('session_id', $profile->session_id)->where('is_open', 1)->first();
+        if (is_null($courseOffering)) 
+        return "No Courses offer yet";
+       
         $availableCourses = sessionSemesterCourse::where('department_id', $profile->department_id)->where('session_id', $profile->session_id)->where('semester_id', $courseOffering->semester_id)->where('is_Active', 1)->get();
 
 
@@ -41,7 +44,7 @@ class EnrollCourseController extends Controller
         $results = result::where('semester_id', $courseOffering->semester_id)->where('student_id', $profile->id)->get();
 
 
-        return view('student.course.enroll', compact('availableCourses', 'results'));
+        return view('student.course.enroll', compact( 'results'));
     }
 
     /**

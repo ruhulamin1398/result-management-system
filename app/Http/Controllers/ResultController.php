@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\course;
+use App\Models\department;
 use App\Models\result;
+use App\Models\semester;
+use App\Models\sessionSemesterCourse;
+use App\Models\studySession;
 use Illuminate\Http\Request;
 
 class ResultController extends Controller
@@ -15,10 +19,15 @@ class ResultController extends Controller
      */
     public function index(Request $request)
     {
-        $course= course::find($request->course_id);
-        // return $course->results;
+        
+        $department = department::find($request->department_id);
+        $studySession = studySession::find($request->session_id);
+        $semesters = semester::all();
+
+         $courses = sessionSemesterCourse::where('department_id', $request->department_id)->where('session_id', $request->session_id)->where('is_Active', 1)->get()->groupBy('semester_id');
+
       
-        return view('admin.result.index',compact('course'));
+        return view('admin.result.index',compact('courses','semesters','studySession','department'));
         //
     }
 
