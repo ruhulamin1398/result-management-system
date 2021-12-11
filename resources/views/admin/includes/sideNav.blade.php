@@ -16,8 +16,8 @@
         <div class="nk-sidebar-content">
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
-                    
-                @role('student')
+
+                    @role('student')
                     <li class="nk-menu-item">
                         <a href="{{route('index')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
@@ -47,6 +47,25 @@
                     <li class="nk-menu-item  has-sub ">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
+                            <span class="nk-menu-text">Course Offering</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="{{route('course-offerings.index')}}?department_id=1" class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{route('course-offerings.index')}}?department_id=2" class="nk-menu-link"><span class="nk-menu-text">EEE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{route('course-offerings.index')}}?department_id=3" class="nk-menu-link"><span class="nk-menu-text">CE</span></a>
+                            </li>
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
+
+
+                    <li class="nk-menu-item  has-sub ">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
                             <span class="nk-menu-text">Courses</span>
                         </a>
                         <ul class="nk-menu-sub">
@@ -62,6 +81,8 @@
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
 
+
+
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
@@ -69,7 +90,7 @@
                         </a>
                         <ul class="nk-menu-sub">
 
-                        <li class="nk-menu-item">
+                            <li class="nk-menu-item">
                                 <a href="{{route('students.create')}}" class="nk-menu-link"><span class="nk-menu-text">New Student</span></a>
                             </li>
 

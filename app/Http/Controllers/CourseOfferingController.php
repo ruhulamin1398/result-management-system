@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\courseOffering;
 use App\Http\Requests\StorecourseOfferingRequest;
 use App\Http\Requests\UpdatecourseOfferingRequest;
-
+use App\Models\department;
+use App\Models\semester;
+use App\Models\sessionCourse;
+use App\Models\studySession;
 use Illuminate\Http\Request;
 
 class CourseOfferingController extends Controller
@@ -15,12 +18,38 @@ class CourseOfferingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( Request $request)
+    public function index(Request $request)
     {
-        return $request;
-        $courseOffering = courseOffering::where('department_id',$request->department_id)->where('department_id',$request->department_id)->first();
-        
-        return view('admin.courseOffering.index',compact('courseOffering'));
+        $department = department::find($request->department_id);
+        $sessions = studySession::all();
+        $semesters = semester::all();
+
+
+        foreach ($sessions as $session) {
+            foreach ($semesters as $semester) {
+
+
+
+                $isExist = courseOffering::where('department_id', $request->department_id)->where('session_id', $session->id)->where('semester_id', $semester->id)->first();
+
+
+
+                if (is_null($isExist)) {
+                    $courseOffering = new  courseOffering;
+                    $courseOffering->department_id = $request->department_id;
+                    $courseOffering->session_id = $session->id;
+                    $courseOffering->semester_id = $semester->id;
+                    $courseOffering->save();
+                }
+            }
+        }
+
+
+
+        $courseOffering = courseOffering::where('department_id', $request->department_id)->get()->groupBy('session_id');
+        // return compact('courseOffering','department','sessions','semesters');
+
+        return view('admin.courseOffering.index', compact('courseOffering', 'department', 'sessions', 'semesters'));
     }
 
     /**
@@ -63,7 +92,12 @@ class CourseOfferingController extends Controller
      */
     public function edit(courseOffering $courseOffering)
     {
-       ///
+        if ($courseOffering->is_open == 0)
+            $courseOffering->is_open = 1;
+        else
+            $courseOffering->is_open = 0;
+        $courseOffering->save();
+        return back();
     }
 
     /**
