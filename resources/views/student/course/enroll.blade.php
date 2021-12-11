@@ -296,11 +296,10 @@
                                 <td class="nk-tb-col">
                                     @if($result->is_registered ==1)
 
-                                    <a href="{{route('enroll.edit',$result->id)}} " class="btn btn-danger btn-sm p-1 mt-2 mb-2 mr-4 " style="padding: 2px;">Remove</a>
-                                    @else
+                                    <a href="{{route('enroll.edit',$result->id)}} " class="btn btn-danger btn-sm p-1 mt-2      @else
 
                                     <a href="{{route('enroll.edit',$result->id)}} " class="btn btn-success btn-sm p-1 mt-2 mb-2 mr-4 " style="padding: 2px;">Add</a>
-                                    @endif
+                                    @endif 
 
                                 </td>
 
