@@ -94,9 +94,9 @@ class DatabaseSeeder extends Seeder
         DB::select($sql);
 
         $sql =
-            "INSERT INTO `results` (`id`, `student_id`, `semester_id`, `course_id`, `is_drop`, `is_registered`, `attendance_marks`, `class_test_marks`, `writtent`, `total_marks`, `letter`, `point`, `created_at`, `updated_at`) VALUES
-        (1, 1, 1, 1, 0, 1, 0.00, 0.00, 0.00, 0.00, 'F', 0.00, '2021-12-11 03:17:47', '2021-12-11 03:17:47'),
-        (2, 1, 1, 2, 0, 1, 0.00, 0.00, 0.00, 0.00, 'F', 0.00, '2021-12-11 03:17:47', '2021-12-11 03:17:47');";
+            "INSERT INTO `results` (`id`, `student_id`, `semester_id`, `course_id`,`session_id`, `is_drop`, `is_registered`, `attendance_marks`, `class_test_marks`, `writtent`, `total_marks`, `letter`, `point`, `created_at`, `updated_at`) VALUES
+        (1, 1, 1, 1, 1, 0, 1, 0.00, 0.00, 0.00, 0.00, 'F', 0.00, '2021-12-11 03:17:47', '2021-12-11 03:17:47'),
+        (2, 1, 1, 2,1, 0, 1, 0.00, 0.00, 0.00, 0.00, 'F', 0.00, '2021-12-11 03:17:47', '2021-12-11 03:17:47');";
         DB::select($sql);
     }
 }

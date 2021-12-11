@@ -69,9 +69,15 @@ class ResultController extends Controller
      * @param  \App\Models\result  $result
      * @return \Illuminate\Http\Response
      */
-    public function edit(result $result)
+    public function edit(Request $request,$result)
     {
-        //
+        
+     
+
+          $results= result::where('session_id', $request->session_id)->where('semester_id', $request->semester_id)->where('course_id', $request->course_id)->where('is_registered', 1)->get();
+        $course= course::find($request->course_id);
+
+        return view('admin.result.edit',compact('results','course'));
     }
 
     /**

@@ -18,6 +18,7 @@ class CreateResultsTable extends Migration
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('semester_id');  // which semester  attend the exam
             $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('session_id');
             $table->unsignedBigInteger('is_drop'); // 1 means it is a drop course otherwise regular 
             $table->unsignedBigInteger('is_registered')->default(1); // 1 means it is registered  otherwise user are not interested to register this for this semester 
 

@@ -21,7 +21,7 @@
         </div>
         @endif
         <div class="nk-block-head-content">
-            <h4 class="nk-block-title">{{$course->course_code }} | {{$course->title}}</h4>
+            <h4 class="nk-block-title">{{$course->course_code}} | {{$course->title}}</h4>
             <!-- <div class="nk-block-des">
                 <p>All Projects And Task Details</p>
 
@@ -67,7 +67,9 @@
                 <tbody>
 
                     @php($i =1)
-                    @foreach($course->results as $result)
+                    @foreach($results as $result)
+
+                
                     <form method="post" action="{{route('results.update',$result->id)}}">
                         @csrf
                         <tr class="nk-tb-item ">
@@ -75,43 +77,40 @@
                             <td class="nk-tb-col">{{$i++}}</td>
                             <td class="nk-tb-col">{{$result->student->reg}}</td>
                             <td>
-                                <div class="form-group"> 
+                                <div class="form-group">
                                     <div class="form-control-wrap">
-                <input type="text" name="attendance_marks"  class="form-control" id="attendance_marks{{$result->id}}" value="{{$result->attendance_marks}}" >
+                                        <input type="text" name="attendance_marks" class="form-control" id="attendance_marks{{$result->id}}" value="{{$result->attendance_marks}}">
                                     </div>
                                 </div>
-                            </td> 
+                            </td>
                             <td>
-                                <div class="form-group"> 
+                                <div class="form-group">
                                     <div class="form-control-wrap">
-                                        
-             <input type="text" name="class_test_marks" class="form-control" id="class_test_marks{{$result->id}}"    value="{{$result->class_test_marks}}" >
+
+                                        <input type="text" name="class_test_marks" class="form-control" id="class_test_marks{{$result->id}}" value="{{$result->class_test_marks}}">
                                     </div>
                                 </div>
-                            </td> 
+                            </td>
                             <td>
-                                <div class="form-group"> 
+                                <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="writtent" class="form-control" id="writtent{{$result->id}}"  value="{{$result->writtent}}"  >
+                                        <input type="text" name="writtent" class="form-control" id="writtent{{$result->id}}" value="{{$result->writtent}}">
                                     </div>
                                 </div>
                             </td>
 
-                         
-                            <td class="nk-tb-col">   {{$result->total_marks}}   </td>
-                          
 
-                            <td class="nk-tb-col">  <button type="button" value="Update" onclick="updateresult({{$result->id}})"  class="btn btn-success btn-sm p-1" style="padding: 2px;">update</button>   </td>
-
-                            {{--
-                            <td class="nk-tb-col"> <a href="{{route('semesters.index')}}?department_id={{$department->id}}&&session_id={{$session->id}}" class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a> </td>
+                            <td class="nk-tb-col"> {{$result->total_marks}} </td>
 
 
-                            --}}
-                
+                            <td class="nk-tb-col"> <button type="button" value="Update" onclick="updateresult({{$result->id}})" class="btn btn-success btn-sm p-1" style="padding: 2px;">update</button> </td>
+
+
+
 
                         </tr>
                     </form>
+                   
                     @endforeach
 
                 </tbody>
@@ -141,40 +140,45 @@
 
 @section('js')
 <script>
+    function updateresult(id) {
+        var attendance_marks = $('#attendance_marks' + id).val().trim();
+        var class_test_marks = $('#class_test_marks' + id).val().trim();
+        var writtent = $('#writtent' + id).val().trim();
+        var action = "{{route('results.index')}}" + "/" + id;
+        var token = "{{csrf_token()}}";
+        
+        var data = {
+            method: 'put',
+            _token: token,
+            id: id,
+            attendance_marks: attendance_marks,
+            writtent: writtent,
+            class_test_marks: class_test_marks,
+        }
 
-
-function updateresult(id){
-    var attendance_marks = $('#attendance_marks'+id).val().trim();
-    var class_test_marks = $('#class_test_marks'+id).val().trim();
-    var writtent = $('#writtent'+id).val().trim(); 
-    var action="{{route('results.index')}}"+"/"+id;
-    var token= "{{csrf_token()}}";
-    alert(action);
-var data =  { method:'put', _token:token, id: id,attendance_marks: attendance_marks,writtent: writtent, class_test_marks: class_test_marks, }
-  
-$.ajax({
+        $.ajax({
             type: 'post',
             url: action,
-            data:{
-                "_token":token,
-                "_method":"PUT",
-                "attendance_marks":attendance_marks,
-                "writtent":writtent,
-                "class_test_marks":class_test_marks,
-                
-                
+            data: {
+                "_token": token,
+                "_method": "PUT",
+                "attendance_marks": attendance_marks,
+                "writtent": writtent,
+                "class_test_marks": class_test_marks,
+
+
             },
-            success: function (data) {
-                
+            success: function(data) {
+
                 $('#pageloader').hide();
-                 location.reload(true);
+                location.reload(true);
                 // console.log('data');
                 console.log(data);
 
                 // viewSupplierData(supplier);
             },
-            error: function (data) {
-                
+            error: function(data) {
+
                 $('#pageloader').hide();
                 alert("Failed order ..... Try Again !!!!!!!!!!!")
                 console.log('An error occurred.');
@@ -183,12 +187,7 @@ $.ajax({
         });
 
 
-}
- 
- 
-
-
-
+    }
 </script>
 
 
