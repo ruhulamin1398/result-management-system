@@ -171,7 +171,7 @@
                                 <td class="nk-tb-col"> Total</td>
 
                                 <td class="nk-tb-col">
-                                    <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 mr-4 ml-4"> {{$credit}} </span> Credit
+                                    <span class="font-weight-bold border border-dark p-1 pl-2 pr-2  ml-4"> {{$credit}} </span> 
 
                                 </td>
 
@@ -244,7 +244,7 @@
                                 <td class="nk-tb-col"> Total</td>
 
                                 <td class="nk-tb-col">
-                                    <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 mr-4 ml-4"> {{$credit}} </span> Credit
+                                    <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 ml-4"> {{$credit}} </span> 
 
                                 </td>
 
@@ -288,20 +288,9 @@
                             @php($credit +=$result->course->credit)
                             <tr class="nk-tb-item ">
 
-                                <td class="nk-tb-col"> {{$i++}} </td>
-                                <td class="nk-tb-col"> {{$result->course->course_code}} </td>
-                                <td class="nk-tb-col"> {{$result->course->title}}</td>
-                                <td class="nk-tb-col"> {{$result->course->credit}}</td>
+                               
 
-                                <td class="nk-tb-col">
-                                    @if($result->is_registered ==1)
-
-                                    <a href="{{route('enroll.edit',$result->id)}} " class="btn btn-danger btn-sm p-1 mt-2      @else
-
-                                    <a href="{{route('enroll.edit',$result->id)}} " class="btn btn-success btn-sm p-1 mt-2 mb-2 mr-4 " style="padding: 2px;">Add</a>
-                                    @endif 
-
-                                </td>
+                             
 
                             </tr>
                             @endif
@@ -316,7 +305,7 @@
                                 <td class="nk-tb-col"> Total</td>
 
                                 <td class="nk-tb-col">
-                                    <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 mr-4 ml-4"> {{$credit}} </span> Credit
+                                    <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 ml-4"> {{$credit}} </span> 
 
                                 </td>
 

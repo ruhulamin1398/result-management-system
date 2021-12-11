@@ -115,7 +115,6 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">title</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">credit</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Type</span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">result</span></th>
 
                     </tr>
                 </thead>
@@ -145,8 +144,7 @@
 
 
                         </td>
-                        <td class="nk-tb-col"> <a href="{{route('results.index')}}?course_id={{$course->id}}" class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a> </td>
-
+                    
                     </tr>
                     @endforeach
                 </tbody>

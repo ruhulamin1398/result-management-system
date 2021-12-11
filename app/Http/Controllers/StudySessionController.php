@@ -47,24 +47,24 @@ class StudySessionController extends Controller
      */
     public function store(Request $request)
     {
-        // $studySessions = new studySession;
-        // $studySessions->title = $request->title;
-        // $studySessions->save();
+        $studySessions = new studySession;
+        $studySessions->title = $request->title;
+        $studySessions->save();
 
-        // $departmentStudySession = new departmentStudySession;
-        // $departmentStudySession->department_id = 1;
-        // $departmentStudySession->session_id = $studySessions->id;
-        // $departmentStudySession->save();
+        $departmentStudySession = new departmentStudySession;
+        $departmentStudySession->department_id = 1;
+        $departmentStudySession->session_id = $studySessions->id;
+        $departmentStudySession->save();
 
-        // $departmentStudySession = new departmentStudySession;
-        // $departmentStudySession->department_id = 2;
-        // $departmentStudySession->session_id = $studySessions->id;
-        // $departmentStudySession->save();
+        $departmentStudySession = new departmentStudySession;
+        $departmentStudySession->department_id = 2;
+        $departmentStudySession->session_id = $studySessions->id;
+        $departmentStudySession->save();
 
-        // $departmentStudySession = new departmentStudySession;
-        // $departmentStudySession->department_id = 3;
-        // $departmentStudySession->session_id = $studySessions->id;
-        // $departmentStudySession->save();
+        $departmentStudySession = new departmentStudySession;
+        $departmentStudySession->department_id = 3;
+        $departmentStudySession->session_id = $studySessions->id;
+        $departmentStudySession->save();
         
 
 
@@ -73,25 +73,7 @@ class StudySessionController extends Controller
        
 
 
-        for(  $i=1; $i<=6; $i++  ){
-
-
-        $courseOffering = new courseOffering;
-        $courseOffering->department_id = 1;
-        $courseOffering->session_id = $i;
-        $courseOffering->save();
-
-        $courseOffering = new courseOffering;
-        $courseOffering->department_id = 2;
-        $courseOffering->session_id = $i;
-        $courseOffering->save();
-
-        $courseOffering = new courseOffering;
-        $courseOffering->department_id = 3;
-        $courseOffering->session_id = $i;
-        $courseOffering->save();
-
-        }
+     
         return redirect(route('study_sessions.create'));
     }
 

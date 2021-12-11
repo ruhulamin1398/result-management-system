@@ -43,6 +43,25 @@
                     </li><!-- .nk-menu-item -->
 
 
+                    <li class="nk-menu-item  has-sub ">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
+                            <span class="nk-menu-text">Courses</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="{{route('semesters.index')}}?department_id=1" class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{route('semesters.index')}}?department_id=2" class="nk-menu-link"><span class="nk-menu-text">EEE</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{route('semesters.index')}}?department_id=3" class="nk-menu-link"><span class="nk-menu-text">CE</span></a>
+                            </li>
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
+
+                    
 
                     <li class="nk-menu-item  has-sub ">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
@@ -62,24 +81,6 @@
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
 
-
-                    <li class="nk-menu-item  has-sub ">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
-                            <span class="nk-menu-text">Courses</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="{{route('semesters.index')}}?department_id=1" class="nk-menu-link"><span class="nk-menu-text">CSE</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="{{route('semesters.index')}}?department_id=2" class="nk-menu-link"><span class="nk-menu-text">EEE</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="{{route('semesters.index')}}?department_id=3" class="nk-menu-link"><span class="nk-menu-text">CE</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
 
 
 

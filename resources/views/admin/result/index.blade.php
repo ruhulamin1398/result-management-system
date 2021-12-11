@@ -27,13 +27,13 @@
         @endif
         <div class="nk-block-head-content">
             <h4 class="nk-block-title">{{$department->title}}</h4>
-            <!-- <div class="nk-block-des">
-                <p>All Projects And Task Details</p>
+            <div class="nk-block-des">
+                <p> Session : {{$studySession->title}}</p>
 
-                <a href="#" class="btn btn-primary">Yesterday</a>
+                <!-- <a href="#" class="btn btn-primary">Yesterday</a> -->
 
 
-            </div> -->
+            </div>
         </div>
     </div>
 
@@ -50,8 +50,8 @@
                     <tr class="nk-tb-item nk-tb-head">
 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Title </span></th>
-                        <th class="nk-tb-col tb-col-md text-center"><span class="sub-text">semesters </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Semester </span></th>
+                        <th class="nk-tb-col tb-col-md text-center"><span class="sub-text">Courses </span></th>
 
 
                     </tr>
@@ -62,7 +62,7 @@
 
                     <tr class="nk-tb-item nk-tb-head">
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Title </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Semester </span></th>
                         <th class="nk-tb-col tb-col-md text-center"><span class="sub-text">Courses </span></th>
 
 

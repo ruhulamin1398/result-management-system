@@ -64,10 +64,8 @@
 
                     <tr class="nk-tb-item nk-tb-head">
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th> 
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">semesters </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">sessions </span></th>
 
                     </tr>
                 </thead>
@@ -77,11 +75,9 @@
 
                     <tr class="nk-tb-item nk-tb-head">
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Sort Form </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">semesters </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">sessions </span></th>
-
+                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th>
+            
 
                     </tr>
                 </tfoot>
@@ -92,11 +88,9 @@
                     <tr class="nk-tb-item ">
 
                         <td class="nk-tb-col">{{$i++}}</td>
-                        <td class="nk-tb-col">{{$department->title}}</td>
                         <td class="nk-tb-col">{{$department->sort_form}}</td>
-                        <td class="nk-tb-col">  <a href="{{route('semesters.index')}}?department_id={{$department->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
-                        <td class="nk-tb-col">  <a href="{{route('study_sessions.index')}}?department_id={{$department->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
-                      
+                        <td class="nk-tb-col">{{$department->title}}</td>
+                       
                     </tr>
                     @endforeach
                 </tbody>

@@ -36,6 +36,7 @@ class EnrollCourseController extends Controller
                 $result->semester_id = $courseOffering->semester_id;
                 $result->course_id = $course->course_id;
                 $result->student_id = $profile->id;
+                $result->session_id = $profile->session_id;
                 $result->is_drop = 0;
                 $result->save();
             }
@@ -43,8 +44,10 @@ class EnrollCourseController extends Controller
 
         $results = result::where('semester_id', $courseOffering->semester_id)->where('student_id', $profile->id)->get();
 
+        $dropCourses =2  ;
 
-        return view('student.course.enroll', compact( 'results'));
+
+        return view('student.course.enroll', compact( 'results' ,'dropCourses'));
     }
 
     /**
