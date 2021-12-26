@@ -22,8 +22,14 @@ class EnrollCourseController extends Controller
     {
         $profile = Auth::user()->profile;
         $courseOffering = courseOffering::where('department_id', $profile->department_id)->where('session_id', $profile->session_id)->where('is_open', 1)->first();
-        if (is_null($courseOffering)) 
-        return "No Courses offer yet";
+        if (is_null($courseOffering)) {
+
+            // return "No Courses offer yet";
+            $results=array();
+            $availableCourses=array();
+        } else{
+
+       
        
         $availableCourses = sessionSemesterCourse::where('department_id', $profile->department_id)->where('session_id', $profile->session_id)->where('semester_id', $courseOffering->semester_id)->where('is_Active', 1)->get();
 
@@ -43,11 +49,62 @@ class EnrollCourseController extends Controller
         }
 
         $results = result::where('semester_id', $courseOffering->semester_id)->where('student_id', $profile->id)->get();
+    }
 
-        $dropCourses =2  ;
+// calculating drop courses 
+$currentSemester= result::where('student_id', $profile->id)->orderByDesc('semester_id') ->first()->semester_id;
+// return $currentSemester;
 
 
-        return view('student.course.enroll', compact( 'results' ,'dropCourses'));
+/// all drop courses ever
+        $dropCourses = result::where('student_id', $profile->id)->where('point','=', 0)->get();   
+        $dropCourseArray=array();
+        foreach ($dropCourses as $course) {
+            // check if already cleared or not 
+            $isExist = result::where('student_id', $profile->id)->where('course_id', $course->course_id) ->latest() ->first();
+
+            if ($isExist->point ==0){
+                // if not cleared 
+                $isfoundInCurrentSemester=0;
+                 // check if it on current semester or not 
+                foreach ($availableCourses as $availableCourse) {
+                   if($availableCourse->course_id == $isExist->course_id ) {
+                    // echo $availableCourse->course_id." == ". $isExist->course_id. ' </br>'  ;
+                    $isfoundInCurrentSemester=1;
+                   }
+                } 
+                if ($isfoundInCurrentSemester ==0){
+                    // if not is current semeter add this into  drop course 
+
+                    $dropCourseArray[$isExist->course_id]= $isExist;
+
+                }
+
+            }
+
+
+            
+            // if (is_null($isExist)) {
+            //     $result = new  result;
+            //     $result->semester_id = $course->semester_id; //current semester id 
+            //     $result->course_id = $course->course_id;
+            //     $result->student_id = $profile->id;
+            //     $result->session_id = $profile->session_id;
+            //     $result->is_drop = 1;
+            //     // $result->save();
+            //     return  $result;
+            // }
+            // return  "new";
+
+        }
+        
+        
+        // return  $dropCourseArray;
+        // return $dropCourses;
+
+
+
+        return view('student.course.enroll', compact( 'results' ,'dropCourses','dropCourseArray'));
     }
 
     /**

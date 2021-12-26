@@ -210,10 +210,10 @@
                         <tbody>
                             @php($i=1)
                             @php($credit=0)
-                            @foreach($results as $result)
-                            @if($result->course->type ==2)
-                            @php($credit +=$result->course->credit)
-                            <tr class="nk-tb-item ">
+                            @foreach($dropCourseArray as $result)
+                                @if($result->course->type ==1)
+                                @php($credit +=$result->course->credit)
+                                <tr class="nk-tb-item ">
 
                                 <td class="nk-tb-col"> {{$i++}} </td>
                                 <td class="nk-tb-col"> {{$result->course->course_code}} </td>
@@ -231,8 +231,8 @@
 
                                 </td>
 
-                            </tr>
-                            @endif
+                                </tr>
+                                @endif
                             @endforeach
 
 
@@ -283,17 +283,29 @@
                         <tbody>
                             @php($i=1)
                             @php($credit=0)
-                            @foreach($results as $result)
-                            @if($result->course->type ==2)
-                            @php($credit +=$result->course->credit)
-                            <tr class="nk-tb-item ">
+                            @foreach($dropCourseArray as $result)
+                                @if($result->course->type ==2)
+                                @php($credit +=$result->course->credit)
+                                <tr class="nk-tb-item ">
 
-                               
+                                <td class="nk-tb-col"> {{$i++}} </td>
+                                <td class="nk-tb-col"> {{$result->course->course_code}} </td>
+                                <td class="nk-tb-col"> {{$result->course->title}}</td>
+                                <td class="nk-tb-col"> {{$result->course->credit}}</td>
 
-                             
+                                <td class="nk-tb-col">
+                                    @if($result->is_registered ==1)
 
-                            </tr>
-                            @endif
+                                    <a href="{{route('enroll.edit',$result->id)}} " class="btn btn-danger btn-sm p-1 mt-2 mb-2 mr-4 " style="padding: 2px;">Remove</a>
+                                    @else
+
+                                    <a href="{{route('enroll.edit',$result->id)}} " class="btn btn-success btn-sm p-1 mt-2 mb-2 mr-4 " style="padding: 2px;">Add</a>
+                                    @endif
+
+                                </td>
+
+                                </tr>
+                                @endif
                             @endforeach
 
 
