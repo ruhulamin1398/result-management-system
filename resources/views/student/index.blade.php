@@ -73,7 +73,7 @@
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container" >
+      <div class="container">
 
         <div class="section-title">
           <h2>About</h2>
@@ -132,9 +132,9 @@
     }
     @endphp
 
-    <!-- <p>   {{$credits2}}    </p>
-<p>    {{$points2}}  </p>
---- -->
+    {{-- <p>   {{$credits2}} </p>
+    <p> {{$points2}} </p>
+    --}}
     @endforeach
     @endforeach
 
@@ -280,17 +280,17 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
- 
-   
-    <button type="button" class="btn btn-outline-primary">
-      
-    <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><em class="icon ni ni-signout"></em><span>Sign out</span></a>
-    
-    </button>
-     
 
 
-      
+      <button type="button" class="btn btn-outline-primary">
+
+        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><em class="icon ni ni-signout"></em><span>Sign out</span></a>
+
+      </button>
+
+
+
+
 
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}

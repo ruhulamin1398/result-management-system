@@ -221,6 +221,8 @@
                                 <td class="nk-tb-col"> {{$result->course->credit}}</td>
 
                                 <td class="nk-tb-col">
+                                    
+                                
                                     @if($result->is_registered ==1)
 
                                     <a href="{{route('enroll.edit',$result->id)}} " class="btn btn-danger btn-sm p-1 mt-2 mb-2 mr-4 " style="padding: 2px;">Remove</a>
@@ -329,6 +331,85 @@
         </div>
 
 
+        
+
+        <div class="col-12 col-md-12 mt-4">
+
+            <div class="card card-preview">
+                <div class="card-inner">
+                    <h4 class="nk-block-title text-center">Un Available courses (Drop) </h4>
+                    <table class=" nowrap nk-tb-list nk-tb-ulist" data-auto-responsive="true">
+
+                        <thead>
+
+                            <tr class="nk-tb-item nk-tb-head">
+                                <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
+                                <th class="nk-tb-col tb-col-md"><span class="sub-text">Code</span></th>
+                                <th class="nk-tb-col tb-col-md"><span class="sub-text">title</span></th>
+                                <th class="nk-tb-col tb-col-md"><span class="sub-text">Type</span></th>
+                                <th class="nk-tb-col tb-col-md"><span class="sub-text">credit</span></th> 
+
+                            </tr>
+                        </thead>
+
+
+                        <tfoot>
+
+
+                        </tfoot>
+
+                        <tbody>
+                            @php($i=1)
+                            @php($credit=0)
+                            @foreach($dropCourseArrayUnAvailable as $result)
+                               
+                                @php($credit +=$result->credit)
+                                <tr class="nk-tb-item ">
+
+                                <td class="nk-tb-col"> {{$i++}} </td>
+                                <td class="nk-tb-col"> {{$result->course_code}} </td>
+                                <td class="nk-tb-col"> {{$result->title}}</td>
+                              
+                                <td class="nk-tb-col">
+                                    
+                                @if($result->type ==2)
+                                LAB
+                                @else
+                                THEORY
+                                @endif
+                            
+                            </td>
+                                <td class="nk-tb-col"> {{$result->credit}}</td>
+
+                                
+
+                                </tr>
+                              
+                            @endforeach
+
+
+                            <tr class="nk-tb-item ">
+
+                                <td class="nk-tb-col"> </td>
+                                <td class="nk-tb-col"> </td>
+                                <td class="nk-tb-col"> </td>
+                                <td class="nk-tb-col"> Total</td>
+
+                                <td class="nk-tb-col">
+                                    <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 ml-4"> {{$credit}} </span> 
+
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+ >
     </div>
 </div>
 

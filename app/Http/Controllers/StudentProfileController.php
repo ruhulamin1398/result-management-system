@@ -19,7 +19,7 @@ class StudentProfileController extends Controller
     {
         $student = Auth::user();
         //  return "dsafas";
-        $results =  result::where('student_id', $student->profile->id)->get()->groupBy('semester_id');
+        $results =  result::where('student_id', $student->profile->id)->get()->groupBy('registered_at');
         //   return $results;
 
         return view('student.index', compact('student', 'results'));

@@ -74,7 +74,7 @@ class ResultController extends Controller
         
      
 
-          $results= result::where('session_id', $request->session_id)->where('semester_id', $request->semester_id)->where('course_id', $request->course_id)->where('is_registered', 1)->get();
+        $results= result::where('session_id', $request->session_id)->where('semester_id', $request->semester_id)->where('course_id', $request->course_id)->where('is_registered', 1)->where('is_drop', 0)->get();
         $course= course::find($request->course_id);
 
         return view('admin.result.edit',compact('results','course'));
