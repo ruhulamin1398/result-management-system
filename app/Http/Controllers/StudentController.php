@@ -8,6 +8,7 @@ use App\Models\student;
 use App\Models\studySession;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
@@ -55,6 +56,17 @@ class StudentController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make(1234);
         $user->save();
+
+
+        DB::table('model_has_roles')->insert([
+            [
+                'role_id' => 2,
+                'model_type' => 'App\Models\User',
+                'model_id' => $user->id,
+            ],  
+        ]);
+
+
 
         
 

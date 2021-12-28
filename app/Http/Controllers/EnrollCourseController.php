@@ -71,10 +71,11 @@ class EnrollCourseController extends Controller
 
 
         /// all drop courses ever
+        
         $dropCourses = result::where('student_id', $profile->id)->where('point', '=', 0)->get();
 
 
-        $currentSemester = result::where('student_id', $profile->id)->orderByDesc('semester_id')->first()->semester_id;
+        $currentSemester = result::where('student_id', $profile->id)->orderByDesc('semester_id')->first()->semester_id??1;
         // return $currentSemester;
         $dropCourseArray = array();
         $dropCourseArrayUnAvailable = array();
@@ -107,9 +108,15 @@ class EnrollCourseController extends Controller
                     #   2. check if it has this course or not 
                     #
                     #
+                    if (is_null($courseOffering)) {
+                        $allOpenedSessions= array();
+                    }
+                    else{
+
+                   
                     $allOpenedSessions = courseOffering::where('department_id', $profile->department_id)->where('is_open', 1)->where('id', '!=', $courseOffering->id)->get();
                     // return $allOpenedSessions;
-
+                }
                     foreach ($allOpenedSessions as $allOpenedSession) {
                         // return $allOpenedSession;
 

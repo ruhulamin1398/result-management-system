@@ -25,8 +25,8 @@
         <div class="nk-block-head-content">
             <h4 class="nk-block-title">{{Auth::user()->profile->department->title}}</h4>
             <div class="nk-block-des">
-                <p>OFFER <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 mr-4 ml-2"> 35.00 </span> | ENROLLED <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 mr-4 ml-2"> 25.5 </span> </p>
-
+                {{--<p>OFFER <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 mr-4 ml-2"> 35.00 </span> | ENROLLED <span class="font-weight-bold border border-dark p-1 pl-2 pr-2 mr-4 ml-2"> 25.5 </span> </p>
+--}}
 
 
             </div>
