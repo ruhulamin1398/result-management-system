@@ -43,9 +43,13 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Reg </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Attendance </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Term Test </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Final </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">TT </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">A_Code </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">A_Marks </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">B_Code </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">B_Marks </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Total </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Grade </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Action </span></th>
 
                     </tr>
@@ -94,13 +98,36 @@
                             <td>
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="writtent" class="form-control" id="writtent{{$result->id}}" value="{{$result->writtent}}">
+                                        <input type="text" name="a_code" class="form-control" id="a_code{{$result->id}}" value="{{$result->a_code}}">
                                     </div>
                                 </div>
                             </td>
-
+                            <td>
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <input type="text" name="a_marks" class="form-control" id="a_marks{{$result->id}}" value="{{$result->a_marks}}">
+                                    </div>
+                                </div>
+                            </td>
+                             
+                            <td>
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <input type="text" name="b_code" class="form-control" id="b_code{{$result->id}}" value="{{$result->b_code}}">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <input type="text" name="b_marks" class="form-control" id="b_marks{{$result->id}}" value="{{$result->b_marks}}">
+                                    </div>
+                                </div>
+                            </td>
+                             
 
                             <td class="nk-tb-col"> {{$result->total_marks}} </td>
+                            <td class="nk-tb-col"> {{$result->point}} </td>
 
 
                             <td class="nk-tb-col"> <button type="button" value="Update" onclick="updateresult({{$result->id}})" class="btn btn-success btn-sm p-1" style="padding: 2px;">update</button> </td>
@@ -143,18 +170,22 @@
     function updateresult(id) {
         var attendance_marks = $('#attendance_marks' + id).val().trim();
         var class_test_marks = $('#class_test_marks' + id).val().trim();
-        var writtent = $('#writtent' + id).val().trim();
+        var a_code = $('#a_code' + id).val().trim();
+        var a_marks = $('#a_marks' + id).val().trim();
+        var b_code = $('#b_code' + id).val().trim();
+        var b_marks = $('#b_marks' + id).val().trim();
         var action = "{{route('results.index')}}" + "/" + id;
         var token = "{{csrf_token()}}";
         
-        var data = {
-            method: 'put',
-            _token: token,
-            id: id,
-            attendance_marks: attendance_marks,
-            writtent: writtent,
-            class_test_marks: class_test_marks,
-        }
+        // var data = {
+        //     method: 'put',
+        //     _token: token,
+        //     id: id,
+        //     attendance_marks: attendance_marks,
+        //     class_test_marks: class_test_marks,
+        // }
+        // console.log(data)
+
 
         $.ajax({
             type: 'post',
@@ -163,12 +194,16 @@
                 "_token": token,
                 "_method": "PUT",
                 "attendance_marks": attendance_marks,
-                "writtent": writtent,
                 "class_test_marks": class_test_marks,
+                "a_code": a_code,
+                "a_marks": a_marks,
+                "b_code": b_code,
+                "b_marks": b_marks,
 
 
             },
             success: function(data) {
+               
 
                 $('#pageloader').hide();
                 location.reload(true);

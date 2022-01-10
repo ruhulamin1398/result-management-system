@@ -92,12 +92,18 @@ class ResultController extends Controller
 
         $result->attendance_marks= $request->attendance_marks;
         $result->class_test_marks= $request->class_test_marks;
-        $result->writtent= $request->writtent;
+        $result->a_code= $request->a_code;
+        $result->a_marks= $request->a_marks;
+        $result->b_code= $request->b_code;
+        $result->b_marks= $request->b_marks;
  
 
-        $totalMarks= $result->attendance_marks+ $result->class_test_marks + $result->writtent;
+        $totalMarks= $result->attendance_marks+ $result->class_test_marks + $result->a_marks+ $result->b_marks;
         $result->total_marks = $totalMarks;
 
+
+        $course_marks = course::find($result->course_id)->marks;
+        $totalMarks= ($totalMarks/$course_marks)*100;
         if($totalMarks >=80){
             $result->point=4;
             $result->letter="A+";

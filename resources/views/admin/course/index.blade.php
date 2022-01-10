@@ -85,8 +85,13 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-2 mt-4">
+                    <div class="col-12 col-lg-2 ">
 
+                    <div class="form-group">
+                            <div class="form-control-wrap">
+                                <input type="text" placeholder="total Marks" name="marks" class="form-control" required>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="form-control-wrap">
@@ -114,6 +119,7 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Code</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">title</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">credit</span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Marks</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Type</span></th>
 
                     </tr>
@@ -134,6 +140,7 @@
                         <td class="nk-tb-col">{{$course->course_code}}</td>
                         <td class="nk-tb-col">{{$course->title}}</td>
                         <td class="nk-tb-col">{{$course->credit}}</td>
+                        <td class="nk-tb-col">{{$course->marks}}</td>
                         <td class="nk-tb-col">
                             @if($course->type==1)
                             Theory

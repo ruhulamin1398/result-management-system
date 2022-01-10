@@ -47,6 +47,7 @@ class CourseController extends Controller
       $course->title = $request->title;
       $course->type = $request->type;
       $course->credit = $request->credit;
+      $course->marks = $request->marks;
       $course->semester_id = $request->semester_id;
       $course->department_id = $request->department_id;
       $course->save();
