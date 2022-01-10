@@ -1,25 +1,5 @@
 @extends('admin.includes.app')
-
-
-
-
 @section('content')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="nk-block nk-block-lg">
 
@@ -88,23 +68,16 @@
                     @php($i =1)
                     @foreach($department->studySessions as $studySession)
 
-                 
+                 @if($studySession->session)
                     <tr class="nk-tb-item ">
 
                         <td class="nk-tb-col">{{$i++}}    </td>
                         <td class="nk-tb-col">{{$studySession->session->title}}</td>
-
-                    
                         <td class="nk-tb-col">  <a href="{{route('students.index')}}?department_id={{$department->id}}&&session_id={{$studySession->session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
                         <td class="nk-tb-col">  <a href="{{route('results.index')}}?department_id={{$department->id}}&&session_id={{$studySession->session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">result</a>  </td>
                         
-                       
-                        
-                        
-                    
-                      
-                      
                     </tr>
+                    @endif
                     @endforeach
                 </tbody>
             </table>

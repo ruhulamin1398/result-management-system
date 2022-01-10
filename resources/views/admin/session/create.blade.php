@@ -142,7 +142,11 @@
                         <td class="nk-tb-col">{{$session->title}}</td>
 
 
-                        <td class="nk-tb-col">  <a href="{{route('study_sessions.edit',$session->id)}}"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">edit</a>  </td> 
+                        <td class="nk-tb-col"> 
+                             <a href="{{route('study_sessions.edit',$session->id)}}"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">edit</a>
+                             <a href="{{route('study_sessions.destroy',$session->id)}}"   onclick="return confirm('Are you sure you want to delete this Session: '+'{{$session->title}}')"  class="btn btn-danger btn-sm p-1 mt-1" style="padding: 2px;">Delete</a>
+                            
+                        </td> 
                    
                         <td class="nk-tb-col">  
                             <a href="{{route('session_semester_courses.index')}}?department_id=1&&session_id={{$session->id}}&&semester_id=1"  class="btn btn-success btn-sm p-1 mt-1" style="padding: 2px;">1st</a>

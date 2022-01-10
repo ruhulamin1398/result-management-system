@@ -20,6 +20,7 @@ class CreateSessionSemesterCoursesTable extends Migration
             $table->unsignedBigInteger('semester_id');
             $table->unsignedBigInteger('course_id');
             $table->integer('is_active')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

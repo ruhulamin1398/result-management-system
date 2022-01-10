@@ -18,6 +18,7 @@ class CreateDepartmentStudySessionsTable extends Migration
             $table->unsignedBigInteger('session_id');
             $table->unsignedBigInteger('department_id');
             $table->integer('is_open')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

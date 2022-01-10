@@ -85,7 +85,8 @@ class StudySessionController extends Controller
      */
     public function show(studySession $studySession)
     {
-        /////
+         $studySession->delete();
+         return back();
     }
 
     /**

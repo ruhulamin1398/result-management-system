@@ -19,6 +19,7 @@ class CreateCourseOfferingsTable extends Migration
             $table->unsignedBigInteger('department_id');
             $table->unsignedBigInteger('semester_id');
             $table->integer('is_open')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

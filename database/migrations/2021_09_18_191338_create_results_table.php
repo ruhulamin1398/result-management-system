@@ -29,6 +29,7 @@ class CreateResultsTable extends Migration
             $table->double('total_marks',8,2)->default(0);
             $table->string('letter')->default('F');
             $table->double('point',8,2)->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

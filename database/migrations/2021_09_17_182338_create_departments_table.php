@@ -18,6 +18,7 @@ class CreateDepartmentsTable extends Migration
             $table->string('sort_form');
             $table->string('title');
             $table->text('details')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

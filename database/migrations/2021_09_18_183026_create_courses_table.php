@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->double('credit',8,2); 
             $table->unsignedBigInteger('semester_id');
             $table->unsignedBigInteger('department_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

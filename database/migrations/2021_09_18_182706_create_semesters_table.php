@@ -17,6 +17,7 @@ class CreateSemestersTable extends Migration
             $table->id();
             $table->string('title'); /// 1st semester . 2nd semester
             $table->integer('level'); ///1 means  
+            $table->softDeletes();
             $table->timestamps();
         });
     }
