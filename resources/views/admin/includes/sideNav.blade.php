@@ -7,8 +7,8 @@
         <div class="nk-sidebar-brand">
 
             <a href="{{route('admin')}}" class="logo-link nk-sidebar-logo">
-                <img class="logo-light logo-img" src="{{asset('backend/images/logo.png')}}" srcset="./images/logo2x.png 2x" alt="logo">
-                <img class="logo-dark logo-img" src="{{asset('backend/images/logo-dark.png')}}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                <img class="logo-light logo-img" src="{{asset('logo.png')}}" srcset="./images/logo2x.png 2x" alt="logo"  height="100px;">
+                <img class="logo-dark logo-img" src="{{asset('logo.png')}}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark"  height="100px;">
             </a>
         </div>
     </div><!-- .nk-sidebar-element -->
