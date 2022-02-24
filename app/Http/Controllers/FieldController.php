@@ -117,8 +117,22 @@ class FieldController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy( Request $request , $id)
     {
-        return "destroy";
+       
+        // return $request;
+        $session_semester_course= sessionSemesterCourse::find($request->data_id);
+        $fields =json_decode(($session_semester_course->fields));
+        $key= $request->data_key;
+        unset($fields->$key);
+        // return $fields->$key;
+        $fields =json_encode(($fields));
+
+        $session_semester_course->fields=   $fields;
+        $session_semester_course->save();
+        // return $session_semester_course;
+        return back();
+
+       
     }
 }

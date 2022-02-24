@@ -136,8 +136,19 @@
 
                                 }
                             </script>
+
+                            <form action="{{route('fields.destroy',$session_semester_course->id)}}" id="deleteform{{$key}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <input type="text" value="{{$session_semester_course->id}}" name="data_id" hidden >
+                                <input type="text" value="{{$key}}" name="data_key" hidden >
+                            </form>
+                            
                             <button type="button" class="btn btn-success btn-sm p-1 pl-2 pr-2 ml-1"   style="padding: 2px;"  onclick="updateform{{$key}}();"    >edit</button>
-                            <button type="button" class="btn btn-danger btn-sm p-1 pl-2 pr-2  ml-1" style="padding: 2px;">delete</button>
+                            
+                        
+                            
+                            <button type="button" class="btn btn-danger btn-sm p-1 pl-2 pr-2  ml-1" style="padding: 2px;" onclick=" if (confirm('do you want to delete this? This Cann`t be undone ')) {$('#deleteform{{$key}}').submit();} else {false;}">delete</button>
                         </td>
 
 
