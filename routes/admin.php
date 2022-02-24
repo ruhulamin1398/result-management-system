@@ -4,6 +4,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseOfferingController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DepartmentStudySessionController;
+use App\Http\Controllers\FieldController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\SessionSemesterCourseController;
@@ -41,6 +42,7 @@ use Inertia\Inertia;
 
  
  Route::resource('course-offerings', CourseOfferingController::class);
+ Route::resource('fields', FieldController::class);
  
 
  

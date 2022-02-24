@@ -21,14 +21,14 @@
         </div>
         @endif
         <div class="nk-block-head-content">
-            <h4 class="nk-block-title">{{$course->course_code}} | {{$course->title}}</h4>
-            <!-- <div class="nk-block-des">
-                <p>All Projects And Task Details</p>
-
-                <a href="#" class="btn btn-primary">Yesterday</a>
 
 
-            </div> -->
+            <h4 class="nk-block-title">{{$course->course_code}} | {{$course->title}}  <a href="{{route('fields.index')}}?course_id={{$results->first()->course_id}}&&session_id= {{$results->first()->session_id}}&&semester_id={{$results->first()->semester_id}}&&department_id={{$department->id}}" class=" ml-4btn btn-primary btn-sm">Fields</a></h4>
+           
+
+               
+
+ 
         </div>
     </div>
 

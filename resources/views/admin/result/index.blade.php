@@ -91,7 +91,7 @@
                             @foreach ( $courses[$semester->id] as $data)
                             @php($course = \App\Models\course::find($data->course_id))
                             
-                            <a href="{{route('results.edit',$course->id)}}?course_id={{$course->id}}&&session_id= {{$studySession->id}}&&semester_id= {{$semester->id}}" class="btn btn-success btn-sm p-1 mt-2 mb-2 mr-4 " style="padding: 2px;">{{$course->course_code }}</a>
+                            <a href="{{route('results.edit',$course->id)}}?course_id={{$course->id}}&&session_id= {{$studySession->id}}&&semester_id= {{$semester->id}}&&department_id= {{$department->id}}" class="btn btn-success btn-sm p-1 mt-2 mb-2 mr-4 " style="padding: 2px;">{{$course->course_code }}</a>
                             @if($ind++ ==4) <br> @endif
                             @endforeach
 

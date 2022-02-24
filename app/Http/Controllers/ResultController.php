@@ -72,12 +72,12 @@ class ResultController extends Controller
     public function edit(Request $request,$result)
     {
         
-     
+      $department= department::find($request->department_id);
 
         $results= result::where('session_id',$request->session_id)->where('semester_id',$request->semester_id)->where('course_id',$request->course_id)->where('is_registered',1)->get();
         $course= course::find($request->course_id);
 
-        return view('admin.result.edit',compact('results','course'));
+        return view('admin.result.edit',compact('results','course','department'));
     }
 
     /**
