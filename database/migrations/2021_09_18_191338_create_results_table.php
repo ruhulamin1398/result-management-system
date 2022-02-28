@@ -32,6 +32,10 @@ class CreateResultsTable extends Migration
             $table->string('b_code',8,2)->default(0);
             $table->double('b_marks',8,2)->default(0);
 
+            $table->json('field_marks')->default("{\"201256\":\"0\"}");
+
+
+
             $table->double('writtent',8,2)->default(0);
             $table->double('total_marks',8,2)->default(0);
             $table->string('letter')->default('F');

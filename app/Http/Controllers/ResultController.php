@@ -72,12 +72,19 @@ class ResultController extends Controller
     public function edit(Request $request,$result)
     {
         
+
+
+        $session_semester_course= sessionSemesterCourse::where('session_id',$request->session_id)->where('semester_id',$request->semester_id)->where('course_id',$request->course_id)->where('department_id',$request->department_id)->first();
+        $fields =json_decode(($session_semester_course->fields));
+
       $department= department::find($request->department_id);
 
         $results= result::where('session_id',$request->session_id)->where('semester_id',$request->semester_id)->where('course_id',$request->course_id)->where('is_registered',1)->get();
         $course= course::find($request->course_id);
+        $studySession= studySession::find($request->session_id);
+        $semester= semester::find($request->semester_id);
 
-        return view('admin.result.edit',compact('results','course','department'));
+        return view('admin.result.edit',compact('results','course','department','fields','studySession','semester'));
     }
 
     /**

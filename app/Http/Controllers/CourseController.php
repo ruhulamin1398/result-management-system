@@ -74,7 +74,7 @@ class CourseController extends Controller
      */
     public function edit(course $course)
     {
-        //
+        return view('admin.course.edit',compact('course'));
     }
 
     /**
@@ -86,7 +86,13 @@ class CourseController extends Controller
      */
     public function update(Request $request, course $course)
     {
-        //
+        $course->course_code = $request->course_code;
+        $course->title = $request->title;
+        $course->type = $request->type;
+        $course->credit = $request->credit;
+        $course->marks = $request->marks;
+        $course->save();
+        return back();
     }
 
     /**
@@ -97,6 +103,6 @@ class CourseController extends Controller
      */
     public function destroy(course $course)
     {
-        //
+       ////////
     }
 }

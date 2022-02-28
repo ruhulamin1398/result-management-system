@@ -89,7 +89,7 @@
 
                     <div class="form-group">
                             <div class="form-control-wrap">
-                                <input type="text" placeholder="total Marks" name="marks" class="form-control" required>
+                                <input type="text" placeholder="total Marks"  value="100" name="marks" class="form-control" required>
                             </div>
                         </div>
 
@@ -121,6 +121,7 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">credit</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Marks</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Type</span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Action</span></th>
 
                     </tr>
                 </thead>
@@ -151,6 +152,16 @@
 
 
                         </td>
+
+                        
+                        
+                        <td class="nk-tb-col">  
+                            <a href="{{route('courses.edit',$course->id)}}"  class="btn btn-primary btn-sm p-1" style="padding: 2px;">Edit</a> 
+                         </td>
+                  
+                            
+                
+
                     
                     </tr>
                     @endforeach

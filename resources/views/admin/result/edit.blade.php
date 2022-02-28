@@ -23,10 +23,12 @@
         <div class="nk-block-head-content">
 
 
-            <h4 class="nk-block-title">{{$course->course_code}} | {{$course->title}}  <a href="{{route('fields.index')}}?course_id={{$results->first()->course_id}}&&session_id= {{$results->first()->session_id}}&&semester_id={{$results->first()->semester_id}}&&department_id={{$department->id}}" class=" ml-4btn btn-primary btn-sm">Fields</a></h4>
+            <h4 class="nk-block-title">{{$course->course_code}} | {{$course->title}}  <a href="{{route('fields.index')}}?course_id={{$course->id}}&&session_id= {{$studySession->id}}&&semester_id={{$semester->id}}&&department_id={{$department->id}}" class=" ml-4btn btn-primary btn-sm">Fields</a></h4>
            
 
-               
+  
+
+            {{$course}}
 
  
         </div>
@@ -42,12 +44,12 @@
                     <tr class="nk-tb-item nk-tb-head">
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Reg </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Attendance </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">TT </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">A_Code </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">A_Marks </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">B_Code </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">B_Marks </span></th>
+
+
+                        @foreach($fields as $key => $field)
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">{{$field}} </span></th>
+                        @endforeach
+
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Total </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Grade </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Action </span></th>
@@ -56,75 +58,42 @@
                 </thead>
 
 
-                <!-- <tfoot>
-
-                    <tr class="nk-tb-item nk-tb-head">
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
-                        <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">student </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th> 
-
-
-                    </tr>
-                </tfoot> -->
-
                 <tbody>
 
                     @php($i =1)
                     @foreach($results as $result)
-
-                
+ 
+                    @php($field_marks =json_decode(($result->field_marks)))
+                    
+                    
+                   
                     <form method="post" action="{{route('results.update',$result->id)}}">
                         @csrf
                         <tr class="nk-tb-item ">
 
                             <td class="nk-tb-col">{{$i++}}</td>
                             <td class="nk-tb-col">{{$result->student->reg}}</td>
-                            <td>
-                                <div class="form-group">
-                                    <div class="form-control-wrap">
-                                        <input type="text" name="attendance_marks" class="form-control" id="attendance_marks{{$result->id}}" value="{{$result->attendance_marks}}">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <div class="form-control-wrap">
+                           
+                            
+                            @foreach($fields as $key => $field) 
 
-                                        <input type="text" name="class_test_marks" class="form-control" id="class_test_marks{{$result->id}}" value="{{$result->class_test_marks}}">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <div class="form-control-wrap">
-                                        <input type="text" name="a_code" class="form-control" id="a_code{{$result->id}}" value="{{$result->a_code}}">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <div class="form-control-wrap">
-                                        <input type="text" name="a_marks" class="form-control" id="a_marks{{$result->id}}" value="{{$result->a_marks}}">
-                                    </div>
-                                </div>
-                            </td>
+                            <!-- if this is a new field it will be initialized  -->
+
+                            @if(!isset($field_marks->$key ))
+                             @php($field_marks->$key=0 )
+                            @endif
                              
+
+
                             <td>
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="b_code" class="form-control" id="b_code{{$result->id}}" value="{{$result->b_code}}">
+                                        <input type="text" name="b_marks" class="form-control" id="b_marks{{$result->id}}" value="{{$field_marks->$key}}">
                                     </div>
                                 </div>
                             </td>
-                            <td>
-                                <div class="form-group">
-                                    <div class="form-control-wrap">
-                                        <input type="text" name="b_marks" class="form-control" id="b_marks{{$result->id}}" value="{{$result->b_marks}}">
-                                    </div>
-                                </div>
-                            </td>
-                             
+                            @endforeach 
+
 
                             <td class="nk-tb-col"> {{$result->total_marks}} </td>
                             <td class="nk-tb-col"> {{$result->point}} </td>
@@ -137,6 +106,13 @@
 
                         </tr>
                     </form>
+
+
+                    <!-- updating all on database -->
+                    <?php
+                     
+
+                    ?>
                    
                     @endforeach
 
