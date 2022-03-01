@@ -23,8 +23,8 @@
         <div class="nk-block-head-content">
 
 
-            <h4 class="nk-block-title">
-                Fields
+            <h4 class="nk-block-title p-4">
+                Fields <a href=" {{ url()->previous() }}"> <span class="btn btn-small btn-sm btn-primary mr-4" > Go Back</span></a>
             </h4>
 
 
@@ -39,12 +39,15 @@
 
 
 
-
-
                 <form action="{{route('fields.store')}}" method="post">
 
 
                     @csrf
+
+                    
+           <input type="text" name="success_url" value="{{ url()->previous() }}" id="" hidden>
+
+
                     <div class="row g-4">
 
 
@@ -123,7 +126,7 @@
                                 <input type="text" value="{{$session_semester_course->id}}" name="data_id" hidden >
                                 <input type="text" value="{{$key}}" name="data_key" hidden >
                                 <input type="text" value="{{$field}}" id="value{{$key}}" name="field" hidden  >
-
+                                <input type="text" name="success_url" value="{{ url()->previous() }}" id="" hidden>
 
 
                             </form>
@@ -142,6 +145,7 @@
                                 @method('delete')
                                 <input type="text" value="{{$session_semester_course->id}}" name="data_id" hidden >
                                 <input type="text" value="{{$key}}" name="data_key" hidden >
+                                <input type="text" name="success_url" value="{{ url()->previous() }}" id="" hidden>
                             </form>
                             
                             <button type="button" class="btn btn-success btn-sm p-1 pl-2 pr-2 ml-1"   style="padding: 2px;"  onclick="updateform{{$key}}();"    >edit</button>

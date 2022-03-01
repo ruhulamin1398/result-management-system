@@ -21,16 +21,10 @@
         </div>
         @endif
         <div class="nk-block-head-content">
+            <h4 class="nk-block-title">{{$course->course_code}} | {{$course->title}} <a href="{{route('fields.index')}}?course_id={{$course->id}}&&session_id= {{$studySession->id}}&&semester_id={{$semester->id}}&&department_id={{$department->id}}" class=" ml-4btn btn-primary btn-sm">Fields</a></h4>
 
+            <!-- {{$course}} -->
 
-            <h4 class="nk-block-title">{{$course->course_code}} | {{$course->title}}  <a href="{{route('fields.index')}}?course_id={{$course->id}}&&session_id= {{$studySession->id}}&&semester_id={{$semester->id}}&&department_id={{$department->id}}" class=" ml-4btn btn-primary btn-sm">Fields</a></h4>
-           
-
-  
-
-            {{$course}}
-
- 
         </div>
     </div>
 
@@ -42,6 +36,7 @@
                 <thead>
 
                     <tr class="nk-tb-item nk-tb-head">
+                        <th><span></span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Reg </span></th>
 
@@ -51,9 +46,9 @@
                         @endforeach
 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Total </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">Grade </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text" >Grade </span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Action </span></th>
-
+                        <th> <span></span></th>
                     </tr>
                 </thead>
 
@@ -62,58 +57,64 @@
 
                     @php($i =1)
                     @foreach($results as $result)
- 
+
                     @php($field_marks =json_decode(($result->field_marks)))
-                    
-                    
-                   
-                    <form method="post" action="{{route('results.update',$result->id)}}">
-                        @csrf
-                        <tr class="nk-tb-item ">
-
-                            <td class="nk-tb-col">{{$i++}}</td>
-                            <td class="nk-tb-col">{{$result->student->reg}}</td>
-                           
-                            
-                            @foreach($fields as $key => $field) 
-
-                            <!-- if this is a new field it will be initialized  -->
-
-                            @if(!isset($field_marks->$key ))
-                             @php($field_marks->$key=0 )
-                            @endif
-                             
 
 
-                            <td>
-                                <div class="form-group">
-                                    <div class="form-control-wrap">
-                                        <input type="text" name="b_marks" class="form-control" id="b_marks{{$result->id}}" value="{{$field_marks->$key}}">
-                                    </div>
+
+
+                    <tr class="nk-tb-item ">
+                        <td>
+                            <form method="post" action="{{route('results.update',$result->id)}}" id="updateform{{$result->id}}">
+                                @csrf @method('put')
+                                <input type="text" value="{{$department->id}}" name="department_id" id="" hidden>
+                        </td>
+                        <td class="nk-tb-col">{{$i++}}</td>
+                        <td class="nk-tb-col">{{$result->student->reg}}</td>
+
+
+                        @foreach($fields as $key => $field)
+
+                        <!-- if this is a new field it will be initialized  -->
+
+                        @if(!isset($field_marks->$key ))
+                        @php($field_marks->$key=0 )
+                        @endif
+
+
+
+                        <td>
+                            <div class="form-group">
+                                <div class="form-control-wrap">
+                                    <input type="text" name="{{$key}}" class="form-control" id="b_marks{{$result->id}}" value="{{$field_marks->$key}}">
                                 </div>
-                            </td>
-                            @endforeach 
+                            </div>
+                        </td>
+                        @endforeach
 
 
-                            <td class="nk-tb-col"> {{$result->total_marks}} </td>
-                            <td class="nk-tb-col"> {{$result->point}} </td>
+                        <td class="nk-tb-col" id="total_marks{{$result->id}}" > {{$result->total_marks}} </td>
+                        <td class="nk-tb-col" id="point{{$result->id}}" > {{$result->point}} </td>
 
 
-                            <td class="nk-tb-col"> <button type="button" value="Update" onclick="updateresult({{$result->id}})" class="btn btn-success btn-sm p-1" style="padding: 2px;">update</button> </td>
+                        <td class="nk-tb-col"> <button type="button" value="Update" onclick="updateresult({{$result->id}})" class="btn btn-success btn-sm p-1" style="padding: 2px;">update</button> </td>
+                        <!-- <td class="nk-tb-col"> <button type="submit" value="Update"  class="btn btn-success btn-sm p-1" style="padding: 2px;">update</button> </td> -->
 
 
+                        <td>
+                            </form>
+                        </td>
 
+                    </tr>
 
-                        </tr>
-                    </form>
 
 
                     <!-- updating all on database -->
                     <?php
-                     
+
 
                     ?>
-                   
+
                     @endforeach
 
                 </tbody>
@@ -144,15 +145,23 @@
 @section('js')
 <script>
     function updateresult(id) {
-        var attendance_marks = $('#attendance_marks' + id).val().trim();
-        var class_test_marks = $('#class_test_marks' + id).val().trim();
-        var a_code = $('#a_code' + id).val().trim();
-        var a_marks = $('#a_marks' + id).val().trim();
-        var b_code = $('#b_code' + id).val().trim();
-        var b_marks = $('#b_marks' + id).val().trim();
+        console.log(('#updateform' + id))
+
+        var form = $('#updateform' + id);
+        console.log(form.serialize())
+
+        // alert(form.attr('action'))
+
+
+        // var attendance_marks = $('#attendance_marks' + id).val().trim();
+        // var class_test_marks = $('#class_test_marks' + id).val().trim();
+        // var a_code = $('#a_code' + id).val().trim();
+        // var a_marks = $('#a_marks' + id).val().trim();
+        // var b_code = $('#b_code' + id).val().trim();
+        // var b_marks = $('#b_marks' + id).val().trim();
         var action = "{{route('results.index')}}" + "/" + id;
-        var token = "{{csrf_token()}}";
-        
+        // var token = "{{csrf_token()}}";
+
         // var data = {
         //     method: 'put',
         //     _token: token,
@@ -166,25 +175,20 @@
         $.ajax({
             type: 'post',
             url: action,
-            data: {
-                "_token": token,
-                "_method": "PUT",
-                "attendance_marks": attendance_marks,
-                "class_test_marks": class_test_marks,
-                "a_code": a_code,
-                "a_marks": a_marks,
-                "b_code": b_code,
-                "b_marks": b_marks,
-
-
-            },
+            data: form.serialize(),
             success: function(data) {
-               
+
 
                 $('#pageloader').hide();
-                location.reload(true);
+                // location.reload(true);
                 // console.log('data');
                 console.log(data);
+                
+                
+                $('#total_marks' + id).text(data.total_marks)
+                $('#point' + id).text(data.point)
+
+               
 
                 // viewSupplierData(supplier);
             },

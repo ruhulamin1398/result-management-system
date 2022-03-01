@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\sessionSemesterCourse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class FieldController extends Controller
 {
@@ -19,7 +20,7 @@ class FieldController extends Controller
         // ];
         // $data =json_encode(json_encode(json_encode($data)));
         // return $data;
-
+// return  $currentURL = url()->previous();
         
         
          $session_semester_course= sessionSemesterCourse::where('session_id',$request->session_id)->where('semester_id',$request->semester_id)->where('course_id',$request->course_id)->where('department_id',$request->department_id)->first();
@@ -61,6 +62,9 @@ class FieldController extends Controller
 
         $session_semester_course->fields=   $fields;
         $session_semester_course->save();
+
+
+        return redirect($request->success_url);
         return back();
     }
 
@@ -106,6 +110,9 @@ class FieldController extends Controller
         $session_semester_course->fields=   $fields;
         $session_semester_course->save();
         // return $session_semester_course;
+
+        return redirect($request->success_url);
+
         return back();
         
         //
@@ -131,6 +138,9 @@ class FieldController extends Controller
         $session_semester_course->fields=   $fields;
         $session_semester_course->save();
         // return $session_semester_course;
+
+        
+        return redirect($request->success_url);
         return back();
 
        
