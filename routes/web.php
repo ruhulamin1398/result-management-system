@@ -7,7 +7,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +20,12 @@ use Inertia\Inertia;
 */
 
 
+Route::get('test',function(){
+
+
+    $pdf = PDF::loadView('pdf.result');
+    return $pdf->download('invoice.pdf');
+});
 
 Route::group(['middleware' => 'auth'], function () {
 
