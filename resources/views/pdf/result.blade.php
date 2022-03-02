@@ -28,10 +28,10 @@
             min-height: 297mm;
             padding: 5mm;
             margin: 5mm auto;
-            /* border: 1px #D3D3D3 solid; */
+            border: 1px #D3D3D3 solid;
             border-radius: 5px;
             background: white;
-            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
 
         .subpage {
@@ -81,11 +81,13 @@
 
 
 
-            <table style="width: 10%;">
-            <tr>
 
-            <td>
-                <table style="width: 10%;">
+
+
+
+
+
+                <table style="width: 100%;">
                     <tr>
 
 
@@ -114,7 +116,7 @@
                         <td>
 
 
-                            <table style="width: 10%; border: 1px solid; font-size: 8px; line-height: 10px;">
+                            <table style="width: 100%; border: 1px solid; font-size: 8px; line-height: 10px;">
                                 <tr style="border: 1px solid;">
                                     <th colspan="2" style="text-align: left;">Numerical Grade</th>
                                     <th style="text-align: left;">Letter Grade</th>
@@ -182,23 +184,18 @@
 
 
                 </table>
-                </td>
-|<tr> 
-<td>
+
+
                 <br>
-                <tr>
-                <table style="width: 10%;">
+
+                <table style="width: 100%;">
                     <tr>
                         <td> First Year First Semester 2016 </td>
                         <td> Held in: August 2016 </td>
                     </tr>
                 </table>
 
-                <td>
-                </tr>
-<tr>
-    <td>
-                <table style="width: 10%;  border-collapse: separate;  border-spacing: 0px;" border="1px">
+                <table style="width: 100%;  border-collapse: separate;  border-spacing: 0px;" border="1px">
 
                     <tr>
 
@@ -293,12 +290,9 @@
                       
                     </tr>
 
-    
 
-                    </table>
-                    </td>
-                    </tr>
-                    </table>
+
+                </table>
 
 
 
