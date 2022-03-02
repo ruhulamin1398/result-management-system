@@ -28,10 +28,10 @@
             min-height: 297mm;
             padding: 5mm;
             margin: 5mm auto;
-            border: 1px #D3D3D3 solid;
+            /* border: 1px #D3D3D3 solid; */
             border-radius: 5px;
             background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
         }
 
         .subpage {
@@ -81,61 +81,224 @@
 
 
 
+            <table style="width: 10%;">
+            <tr>
 
-
-
-
-
-
-
-
-
-                <style>
-                    td {
-                        background-color: #eee;
-                        border: white;
-                    }
-                </style>
-                <table style="width: 100%;">
-
+            <td>
+                <table style="width: 10%;">
                     <tr>
+
+
                         <td colspan="2">
-                            &nbsp;
-                        </td>
-                        <td colspan="10">
-                            SHAHJALAL UNIVERSITY OF SCIENCE & TECHNOLOGY, SYLHET, BANGLADESH
-                        </td>
-                    </tr>
+                            <p style="text-align: center;"> SHAHJALAL UNIVERSITY OF SCIENCE & TECHNOLOGY, SYLHET,
+                                BANGLADESH.</p>
 
+                        </td>
+
+
+                    </tr>
 
                     <tr>
-                        <td colspan="2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/2048px-BMW_logo_%28gray%29.svg.png" alt=""  style="height: 60px; width: 60px;">
+                        <td>
+                            Grade Certificate <br>
+                            B.Sc. (Engg.) Examination <br>
+                            Session: 2015-16 <br>
+                            Name of the College : Sylhet Engineering College, Sylhet <br>
+                            Department : <b>Electrical & Electronics Engineering </b> <br>
+                            Registration No : 2015338501 <br>
+                            Student's Name : Tareq <br>
+
+
                         </td>
-                        <td colspan="4">
-                            <div>Grade Certificate </div>
-                            <div>B.Sc. (Engg.) Examination </div>
-                            <div>Numerical Grade Letter Grade Grade Point </div>
-                            <div>Session: 2015-16 </div>
+
+                        <td>
+
+
+                            <table style="width: 10%; border: 1px solid; font-size: 8px; line-height: 10px;">
+                                <tr style="border: 1px solid;">
+                                    <th colspan="2" style="text-align: left;">Numerical Grade</th>
+                                    <th style="text-align: left;">Letter Grade</th>
+                                    <th style="text-align: left;">Grade Point </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> 80% or above</td>
+                                    <td> A+</td>
+                                    <td>4.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> 75% to less than 80%</td>
+                                    <td> A</td>
+                                    <td>3.75</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> 70% to less than 75%</td>
+                                    <td> A-</td>
+                                    <td>3.50</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> 75% to less than 80%</td>
+                                    <td> A+</td>
+                                    <td>4.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> 75% to less than 80%</td>
+                                    <td> A+</td>
+                                    <td>4.00</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2"> 75% to less than 80%</td>
+                                    <td> A+</td>
+                                    <td>4.00</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2"> 75% to less than 80%</td>
+                                    <td> A+</td>
+                                    <td>4.00</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2"> 75% to less than 80%</td>
+                                    <td> A+</td>
+                                    <td>4.00</td>
+                                </tr>
+
+
+
+
+
+
+
+
+
+                            </table>
 
                         </td>
-                        <td colspan="6" rowspan="2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente perspiciatis velit quos suscipit modi inventore asperiores commodi, assumenda harum sequi quidem nam dignissimos tempore eum ut? Mollitia harum omnis quas sit quibusdam. Deleniti ipsum beatae quas hic sed alias quibusdam ipsa accusantium fuga dicta cupiditate tempore quod, ab nostrum velit. D</td>
+
+
+
                     </tr>
-                    <tr>
-                        <td colspan="6"> Lorem ipsum dolor sit amet.  </td> 
-                    </tr>
-
-
-
-
-
 
 
                 </table>
+                </td>
+|<tr> 
+<td>
+                <br>
+                <tr>
+                <table style="width: 10%;">
+                    <tr>
+                        <td> First Year First Semester 2016 </td>
+                        <td> Held in: August 2016 </td>
+                    </tr>
+                </table>
 
+                <td>
+                </tr>
+<tr>
+    <td>
+                <table style="width: 10%;  border-collapse: separate;  border-spacing: 0px;" border="1px">
 
+                    <tr>
 
+                        <th rowspan="2"> Course No.</th>
+                        <th colspan="4" rowspan="2">Course Title </th>
+                        <th rowspan="2">Credit </th>
+                        <th colspan="2" rowspan="1">Grade Obtained </th>
 
+                    </tr>
+                    <tr>
+                        <td> Grade Point</td>
+                        <td> Letter Grade</td>
+                    </tr>
+                    
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td> 
+                    </tr>
+                    <tr> 
+                        
+                        <td colspan="4"> &nbsp; </td>
+                        <td colspan="1">  This Semester Total:</td>
+                        <td colspan="1">3.75</td>
+                        <td colspan="1">  &nbsp;</td>
+                        <td colspan="1">3.75</td>
+                      
+                    </tr>
+
+    
+
+                    </table>
+                    </td>
+                    </tr>
+                    </table>
 
 
 
