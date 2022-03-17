@@ -16,10 +16,13 @@ class FieldController extends Controller
     public function index(Request $request)
     {
         // $data=[
-        //     '201256'=>'TT marks',
+        //     '201256'=>[
+        //         'title' =>'TT marks',
+        //         'marks' =>'30',
+        //     ],
         // ];
         // $data =json_encode(json_encode(json_encode($data)));
-        // return $data;
+        //  return $data;
 // return  $currentURL = url()->previous();
         
         

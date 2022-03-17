@@ -16,6 +16,8 @@
             background-color: #FAFAFA;
             font-size: 12px;
             line-height: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
         }
 
         * {
@@ -92,7 +94,7 @@
 
 
                         <td colspan="2">
-                            <p style="text-align: center;"> SHAHJALAL UNIVERSITY OF SCIENCE & TECHNOLOGY, SYLHET,
+                            <p style="text-align: center; font-weight: 800; line-height: unset;"> SHAHJALAL UNIVERSITY OF SCIENCE & TECHNOLOGY, SYLHET,
                                 BANGLADESH.</p>
 
                         </td>
@@ -101,14 +103,14 @@
                     </tr>
 
                     <tr>
-                        <td>
-                            Grade Certificate <br>
+                        <td style="line-height: 25px;">
+                            <b> Grade Certificate</b> <br>
                             B.Sc. (Engg.) Examination <br>
                             Session: 2015-16 <br>
-                            Name of the College : Sylhet Engineering College, Sylhet <br>
-                            Department : <b>Electrical & Electronics Engineering </b> <br>
-                            Registration No : 2015338501 <br>
-                            Student's Name : Tareq <br>
+                            Name of the College &nbsp;&nbsp;: Sylhet Engineering College, Sylhet <br>
+                            Department &emsp;&emsp;&emsp; &emsp; : <b>Electrical & Electronics Engineering </b> <br>
+                            Registration No &emsp;&emsp;&emsp;: 2015338501 <br>
+                            Student's Name &emsp;&emsp; &nbsp; : Tareq <br>
 
 
                         </td>
@@ -117,7 +119,7 @@
 
 
                             <table style="width: 100%; border: 1px solid; font-size: 8px; line-height: 10px;">
-                                <tr style="border: 1px solid;">
+                                <tr style="border: 1px solid; ">
                                     <th colspan="2" style="text-align: left;">Numerical Grade</th>
                                     <th style="text-align: left;">Letter Grade</th>
                                     <th style="text-align: left;">Grade Point </th>
@@ -138,32 +140,42 @@
                                     <td>3.50</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"> 75% to less than 80%</td>
-                                    <td> A+</td>
-                                    <td>4.00</td>
+                                    <td colspan="2">65% to less than 70%</td>
+                                    <td> B+</td>
+                                    <td>3.25</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"> 75% to less than 80%</td>
-                                    <td> A+</td>
-                                    <td>4.00</td>
-                                </tr>
-
-                                <tr>
-                                    <td colspan="2"> 75% to less than 80%</td>
-                                    <td> A+</td>
-                                    <td>4.00</td>
+                                    <td colspan="2"> 60% to less than 65% </td>
+                                    <td> B</td>
+                                    <td>3.00</td>
                                 </tr>
 
                                 <tr>
-                                    <td colspan="2"> 75% to less than 80%</td>
-                                    <td> A+</td>
-                                    <td>4.00</td>
+                                    <td colspan="2">55% to less than 60%</td>
+                                    <td> B-</td>
+                                    <td>2.75</td>
                                 </tr>
 
                                 <tr>
-                                    <td colspan="2"> 75% to less than 80%</td>
-                                    <td> A+</td>
-                                    <td>4.00</td>
+                                    <td colspan="2"> 50% to less than 55% </td>
+                                    <td> C+</td>
+                                    <td>2.50</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2">45% to less than 50% </td>
+                                    <td> C</td>
+                                    <td>2.25</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">40% to less than 45%</td>
+                                    <td> C-</td>
+                                    <td>2.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">less than 40% </td>
+                                    <td> F</td>
+                                    <td>0.00</td>
                                 </tr>
 
 
@@ -195,7 +207,7 @@
                     </tr>
                 </table>
 
-                <table style="width: 100%;  border-collapse: separate;  border-spacing: 0px;" border="1px">
+                <table style="width: 100%;  border-collapse: separate;  border-spacing: 0px; border-bottom: 0; border-left: 0;" border="1px">
 
                     <tr>
 
@@ -209,85 +221,189 @@
                         <td> Grade Point</td>
                         <td> Letter Grade</td>
                     </tr>
-                    
-                    <tr> 
+
+                    <tr>
                         <td> EEE110</td>
                         <td colspan="4"> Lorem ipsum dolor sit amet.</td>
                         <td> 3</td>
                         <td>3.75</td>
-                        <td>A</td> 
+                        <td>A</td>
                     </tr>
-                    <tr> 
+                    <tr>
                         <td> EEE110</td>
                         <td colspan="4"> Lorem ipsum dolor sit amet.</td>
                         <td> 3</td>
                         <td>3.75</td>
-                        <td>A</td> 
+                        <td>A</td>
                     </tr>
-                    <tr> 
+                 
+                 
+                    <tr>
                         <td> EEE110</td>
                         <td colspan="4"> Lorem ipsum dolor sit amet.</td>
                         <td> 3</td>
                         <td>3.75</td>
-                        <td>A</td> 
+                        <td>A</td>
                     </tr>
-                    <tr> 
+                    <tr>
                         <td> EEE110</td>
                         <td colspan="4"> Lorem ipsum dolor sit amet.</td>
                         <td> 3</td>
                         <td>3.75</td>
-                        <td>A</td> 
+                        <td>A</td>
                     </tr>
-                    <tr> 
+                    <tr>
                         <td> EEE110</td>
                         <td colspan="4"> Lorem ipsum dolor sit amet.</td>
                         <td> 3</td>
                         <td>3.75</td>
-                        <td>A</td> 
+                        <td>A</td>
                     </tr>
-                    <tr> 
+                    <tr>
                         <td> EEE110</td>
                         <td colspan="4"> Lorem ipsum dolor sit amet.</td>
                         <td> 3</td>
                         <td>3.75</td>
-                        <td>A</td> 
+                        <td>A</td>
                     </tr>
-                    <tr> 
+                    <tr>
                         <td> EEE110</td>
                         <td colspan="4"> Lorem ipsum dolor sit amet.</td>
                         <td> 3</td>
                         <td>3.75</td>
-                        <td>A</td> 
+                        <td>A</td>
                     </tr>
-                    <tr> 
-                        <td> EEE110</td>
-                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
-                        <td> 3</td>
-                        <td>3.75</td>
-                        <td>A</td> 
-                    </tr>
-                    <tr> 
-                        <td> EEE110</td>
-                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
-                        <td> 3</td>
-                        <td>3.75</td>
-                        <td>A</td> 
-                    </tr>
-                    <tr> 
-                        <td> EEE110</td>
-                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
-                        <td> 3</td>
-                        <td>3.75</td>
-                        <td>A</td> 
-                    </tr>
-                    <tr> 
-                        
-                        <td colspan="4"> &nbsp; </td>
-                        <td colspan="1">  This Semester Total:</td>
+                    <tr>
+
+                        <td colspan="1" rowspan="2" style=" border: 0;"> &nbsp; </td>
+                        <td colspan="1" rowspan="2" style=" border: 0;"> &nbsp; </td>
+                        <td colspan="1" rowspan="2" style=" border: 0;"> &nbsp; </td>
+                        <td colspan="1" rowspan="2" style=" border: 0;"> &nbsp; </td>
+
+                        <td colspan="1" style="text-align: right;"> This Semester Total:</td>
+                        <td colspan="1">23.75</td>
                         <td colspan="1">3.75</td>
-                        <td colspan="1">  &nbsp;</td>
+                        <td colspan="1">A-</td>
+
+                    </tr>
+                    <tr style=" border: 0;">
+
+
+
+                        <td colspan="1" style="text-align: right;"> This Semester Total:</td>
+                        <td colspan="1">43.75</td>
+                        <td colspan="1"> 3.50</td>
+                        <td colspan="1">A+</td>
+
+                    </tr>
+
+
+
+                </table>
+
+                <br>
+
+                <table style="width: 100%;">
+                    <tr>
+                        <td> First Year First Semester 2016 </td>
+                        <td> Held in: August 2016 </td>
+                    </tr>
+                </table>
+
+                <table style="width: 100%;  border-collapse: separate;  border-spacing: 0px; border-bottom: 0; border-left: 0;" border="1px">
+
+                    <tr>
+
+                        <th rowspan="2"> Course No.</th>
+                        <th colspan="4" rowspan="2">Course Title </th>
+                        <th rowspan="2">Credit </th>
+                        <th colspan="2" rowspan="1">Grade Obtained </th>
+
+                    </tr>
+                    <tr>
+                        <td> Grade Point</td>
+                        <td> Letter Grade</td>
+                    </tr>
+
+                    <tr>
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td>
+                    </tr>
+                 
+                    <tr>
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td> EEE110</td>
+                        <td colspan="4"> Lorem ipsum dolor sit amet.</td>
+                        <td> 3</td>
+                        <td>3.75</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="1" rowspan="2" style=" border: 0;"> &nbsp; </td>
+                        <td colspan="1" rowspan="2" style=" border: 0;"> &nbsp; </td>
+                        <td colspan="1" rowspan="2" style=" border: 0;"> &nbsp; </td>
+                        <td colspan="1" rowspan="2" style=" border: 0;"> &nbsp; </td>
+
+                        <td colspan="1" style="text-align: right;"> This Semester Total:</td>
+                        <td colspan="1">23.75</td>
                         <td colspan="1">3.75</td>
-                      
+                        <td colspan="1">A-</td>
+
+                    </tr>
+                    <tr style=" border: 0;">
+
+
+
+                        <td colspan="1" style="text-align: right;"> This Semester Total:</td>
+                        <td colspan="1">43.75</td>
+                        <td colspan="1"> 3.50</td>
+                        <td colspan="1">A+</td>
+
                     </tr>
 
 

@@ -1,23 +1,6 @@
 @extends('admin.includes.app')
 
-
-
-
 @section('content')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="nk-block nk-block-lg">
 
@@ -40,21 +23,6 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             </button>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -106,34 +74,35 @@
         <div class="nk-block-head-content">
             <h4 class="nk-block-title"> {{$student->name}} | {{$student->reg}} ( {{$cgpa}} ) </h4>
             <div class="nk-block-des">
-                
-<p>
-</p>             <a href="{{route('students.edit',$student->id)}}" class="btn btn-primary">Edit Profile</a>
 
+                <p>
+               <a href="{{route('students.edit',$student->id)}}" class="btn btn-primary">Edit Profile</a>
+               <a href="{{route('downloadStudentPdf',$student->id)}}" class="btn btn-primary">Download</a>
 
+                </p>
             </div>
         </div>
     </div>
 
-<div class="container p-4">
-    <div class="row">
-        <div class="col-lg-6">
-            <ul>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-6">
+                <ul>
 
-                <li><i class="bi bi-chevron-right"></i> <strong>Registration Number:</strong> <span>{{$student->reg}}</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{$student ->phone}}</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Sex</strong> <span>{{$student ->sex}}</span></li>
-            </ul>
-        </div>
-        <div class="col-lg-6">
-            <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Address</strong> <span>{{$student ->address}}</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Registration Number:</strong> <span>{{$student->reg}}</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{$student ->phone}}</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Sex</strong> <span>{{$student ->sex}}</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <ul>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Address</strong> <span>{{$student ->address}}</span></li>
 
-                <li><i class="bi bi-chevron-right"></i> <strong>Session:</strong> <span>{{$student ->session->title}}</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Department:</strong> <span>{{$student ->department->title}}</span></li>
-            </ul>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Session:</strong> <span>{{$student ->session->title}}</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Department:</strong> <span>{{$student ->department->title}}</span></li>
+                </ul>
+            </div>
         </div>
-    </div>
     </div>
     <div class="card card-preview">
         <div class="card-inner">

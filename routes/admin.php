@@ -9,7 +9,8 @@ use App\Http\Controllers\ResultController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\SessionSemesterCourseController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\StudySessionController; 
+use App\Http\Controllers\StudySessionController;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -44,5 +45,10 @@ use Inertia\Inertia;
  Route::resource('course-offerings', CourseOfferingController::class);
  Route::resource('fields', FieldController::class);
  
+ Route::get('download/student/{id}',function(){
 
+
+    $pdf = PDF::loadView('pdf.result');
+    return $pdf->download('invoice.pdf');
+})->name('downloadStudentPdf');
  

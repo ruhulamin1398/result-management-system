@@ -38,7 +38,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="{{asset('profile-img.jpg')}}" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="{{route('index')}}">{{$student->profile->name}}</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -60,6 +60,8 @@
     </div>
   </header><!-- End Header -->
 
+
+  {{--
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
@@ -68,6 +70,8 @@
       <!-- <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p> -->
     </div>
   </section><!-- End Hero -->
+
+  --}}
 
   <main id="main" class="p-4">
 
