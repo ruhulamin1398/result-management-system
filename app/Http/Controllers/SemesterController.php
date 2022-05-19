@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\department;
 use App\Models\semester;
+use App\Models\studySession;
 use Illuminate\Http\Request;
 
 class SemesterController extends Controller
@@ -12,9 +14,14 @@ class SemesterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        // return $request;
+        $department= department::find($request->department_id);
+        $studySession= studySession::find($request->session_id);
+        $semesters= semester::all();
+        // return $studySession;
+        return view('admin.semester.index',compact('department','semesters','studySession'));
     }
 
     /**

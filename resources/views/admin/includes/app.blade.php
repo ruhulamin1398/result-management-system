@@ -10,11 +10,19 @@
 
     <link rel="shortcut icon" href="{{asset('backend/images/favicon.png')}}">
     <!-- Page Title  -->
-    <title>Project Management</title>
+    <title>Result Management</title>
     <!-- StyleSheets  -->
 
     <link rel="stylesheet" href="  {{asset('backend/assets/css/dashlite.css?ver=2.4.0')}}">
     <link id="skin-default" rel="stylesheet" href="{{asset('backend/assets/css/theme.css?ver=2.4.0')}}">
+
+    <style>
+
+.logo-img {
+    max-height: 65px;
+}
+
+    </style>
 </head>
 
 <body class="nk-body bg-lighter npc-general has-sidebar ">
@@ -22,13 +30,13 @@
         <!-- main @s -->
         <div class="nk-main ">
             <!-- sidebar @s -->
-          @include('admin.includes.sideNav')
+       @include('admin.includes.sideNav') 
             <!-- sidebar @e -->
 
             <!-- wrap @s -->
             <div class="nk-wrap ">
                 <!-- main header @s -->
-               @include('admin.includes.nav')
+             @include('admin.includes.nav') 
           <!-- content @s -->
                 <div class="nk-content ">
                 <div class="container-fluid">
@@ -36,7 +44,7 @@
                             <div class="nk-content-body">
                             
                             
-                       @yield('admin')
+                       @yield('content')
 
 
                             </div>

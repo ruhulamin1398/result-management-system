@@ -16,7 +16,8 @@ class CreateSemestersTable extends Migration
         Schema::create('semesters', function (Blueprint $table) {
             $table->id();
             $table->string('title'); /// 1st semester . 2nd semester
-            $table->integer('serial'); ///1,2,8 
+            $table->integer('level'); ///1 means  
+            $table->softDeletes();
             $table->timestamps();
         });
     }

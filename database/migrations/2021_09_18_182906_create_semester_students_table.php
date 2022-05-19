@@ -15,6 +15,7 @@ class CreateSemesterStudentsTable extends Migration
     {
         Schema::create('semester_students', function (Blueprint $table) {
             $table->id();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

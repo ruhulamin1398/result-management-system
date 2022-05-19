@@ -19,8 +19,10 @@ class CreateCoursesTable extends Migration
             $table->string('title');
             $table->unsignedBigInteger('type'); // 1 measns theory , 2 means lab
             $table->double('credit',8,2); 
+            $table->integer('marks')->default(100); 
             $table->unsignedBigInteger('semester_id');
             $table->unsignedBigInteger('department_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\course;
+use App\Models\department;
+use App\Models\semester;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -12,8 +14,13 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request)
     {
+        $courses= course::where('semester_id',$request->semester_id)->where('department_id',$request->department_id)->get();
+        $semester=  semester::find($request->semester_id);
+        $department=  department::find($request->department_id);
+        return view('admin.course.index',compact('courses','department','semester'));
+
         //
     }
 
@@ -35,7 +42,17 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $course = new course;
+      $course->course_code = $request->course_code;
+      $course->title = $request->title;
+      $course->type = $request->type;
+      $course->credit = $request->credit;
+      $course->marks = $request->marks;
+      $course->semester_id = $request->semester_id;
+      $course->department_id = $request->department_id;
+      $course->save();
+      return back();
+
     }
 
     /**
@@ -57,7 +74,7 @@ class CourseController extends Controller
      */
     public function edit(course $course)
     {
-        //
+        return view('admin.course.edit',compact('course'));
     }
 
     /**
@@ -69,7 +86,13 @@ class CourseController extends Controller
      */
     public function update(Request $request, course $course)
     {
-        //
+        $course->course_code = $request->course_code;
+        $course->title = $request->title;
+        $course->type = $request->type;
+        $course->credit = $request->credit;
+        $course->marks = $request->marks;
+        $course->save();
+        return back();
     }
 
     /**
@@ -80,6 +103,6 @@ class CourseController extends Controller
      */
     public function destroy(course $course)
     {
-        //
+       ////////
     }
 }
