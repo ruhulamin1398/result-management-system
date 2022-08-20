@@ -115,15 +115,34 @@ class FieldController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // return $request;
+      
+
+// return $request;
+
         $session_semester_course= sessionSemesterCourse::find($request->data_id);
         $fields =json_decode(($session_semester_course->fields));
-        $key= $request->data_key;
-        $fields->$key= $request->field;
-        // return $fields->$key;
-        $fields =json_encode(($fields));
 
-        $session_semester_course->fields=   $fields;
+        $key =$request->key ;  
+      
+        $dynamic= 0;
+        if($request->is_dynamic)
+        $dynamic=1;
+
+      
+
+        $fields->$key->field_title =$request->field_title ;
+        $fields->$key->field_marks =$request->field_marks ;
+        $fields->$key->is_dynamic =$dynamic ; 
+
+    
+
+        // $key= $request->data_key;
+        // $fields->$key= $request->field;
+        // return $fields->$key;
+  
+        $fields =json_encode(($fields));
+       
+        $session_semester_course->fields= $fields;
         $session_semester_course->save();
         // return $session_semester_course;
 

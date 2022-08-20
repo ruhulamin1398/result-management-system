@@ -42,7 +42,7 @@
 
 
                         @foreach($fields as $key => $field)
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">{{$field->field_title}} </span></th>
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">{{$field->field_title}} ({{$field->field_marks}})</span></th>
                         @endforeach
 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Total </span></th>
