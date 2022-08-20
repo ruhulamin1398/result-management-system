@@ -32,7 +32,7 @@ class FieldController extends Controller
 
      
 
-        $fields =json_decode(($session_semester_course->fields));
+         $fields =json_decode(($session_semester_course->fields));
         // return $session_semester_course;
 
          return view('admin.fields.edit',compact('fields','session_semester_course'));
@@ -57,16 +57,29 @@ class FieldController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
+
+
         $session_semester_course= sessionSemesterCourse::find($request->data_id);
         $fields =json_decode(($session_semester_course->fields));
         $key= time();
-        $fields->$key= $request->field_title;
+        $dynamic= 0;
+        if($request->is_dynamic)
+        $dynamic=1;
+        $fieldDetails=array(
+            'field_title' =>$request->field_title, 
+            'field_marks' =>$request->field_marks, 
+            'is_dynamic' =>$dynamic, 
+        );
+        $fields->$key= $fieldDetails;
+
         $fields =json_encode(($fields));
+        
 
         $session_semester_course->fields=   $fields;
         $session_semester_course->save();
-
-
+ 
+// return $session_semester_course;
         return redirect($request->success_url);
         return back();
     }
