@@ -73,6 +73,7 @@ class ResultController extends Controller
     {
 
 
+        /////////////////////v2//////////////////////
 
         $session_semester_course = sessionSemesterCourse::where('session_id', $request->session_id)->where('semester_id', $request->semester_id)->where('course_id', $request->course_id)->where('department_id', $request->department_id)->first();
         $fields = json_decode(($session_semester_course->fields));
@@ -87,80 +88,37 @@ class ResultController extends Controller
 
         // check all field exists on every results. if doesn't exist add this with valo 0  and save this on data base 
 
+        // return $results;
+
         foreach ($results as $result) {
-
             $field_marks = json_decode($result->field_marks);
-
             foreach ($fields as $key => $field) {
-
                 if (!isset($field_marks->$key)) {
-                    $field_marks->$key = 0;
+                    $field_marks->$key = array(
+                        'marks' => 0,
+                        'field_marks' =>  $field->field_marks,
+                        'field_title' => $field->field_title,
+                        'is_dynamic' => $field->is_dynamic,
+                    );
                 }
             }
             $result->field_marks = json_encode($field_marks);
             $result->save();
 
 
-
             // calculating total marks 
 
-            $totalMarks = 0;
-            foreach ($fields as $key => $field) {
-                // return  $request->$key;
-                
-                $totalMarks += $field_marks->$key;
-            }
-// return $totalMarks;
-            $result->field_marks = json_encode($field_marks);
-            $result->total_marks = $totalMarks;
-            $result->save();
-
-
-
-
-
-            $course_marks = course::find($result->course_id)->marks;
-            $totalMarks = ($totalMarks / $course_marks) * 100;
-            if ($totalMarks >= 80) {
-                $result->point = 4;
-                $result->letter = "A+";
-            } else if ($totalMarks >= 75) {
-                $result->point = 3.75;
-                $result->letter = "A";
-            } else if ($totalMarks >= 70) {
-                $result->point = 3.5;
-                $result->letter = "A-";
-            } else if ($totalMarks >= 65) {
-                $result->point = 3.25;
-                $result->letter = "B+";
-            } else if ($totalMarks >= 60) {
-                $result->point = 3.00;
-                $result->letter = "B";
-            } else if ($totalMarks >= 55) {
-                $result->point = 2.75;
-                $result->letter = "B-";
-            } else if ($totalMarks >= 50) {
-                $result->point = 2.5;
-                $result->letter = "C+";
-            } else if ($totalMarks >= 45) {
-                $result->point = 2.25;
-                $result->letter = "C-";
-            } else  if ($totalMarks >= 40) {
-                $result->point = 2.00;
-                $result->letter = "D";
-            } else {
-                $result->point = 0;
-                $result->letter = "F";
-            }
-
-            $result->save();
+              $this->Resultcalculation($result);
+             
         }
 
-
-
-
-
         return view('admin.result.edit', compact('results', 'course', 'department', 'fields', 'studySession', 'semester'));
+
+
+        ////////////////////v2//////////////////////
+
+
+
     }
 
     /**
@@ -172,33 +130,69 @@ class ResultController extends Controller
      */
     public function update(Request $request, result $result)
     {
+        $field_marks =    json_decode(($result->field_marks));
 
-        $field_marks = json_decode($result->field_marks);
-        // return $field_marks;
-
-        $session_semester_course = sessionSemesterCourse::where('session_id', $result->session_id)->where('semester_id', $result->semester_id)->where('course_id', $result->course_id)->where('department_id', $request->department_id)->first();
-        $fields = json_decode(($session_semester_course->fields));
-
-
-
-
-        $totalMarks = 0;
-        foreach ($fields as $key => $field) {
-            // return  $request->$key;
-            $field_marks->$key = $request->$key;
-            $totalMarks += $request->$key;
+      
+        foreach($request->field as $key => $value){
+             $field_marks->$key->marks =$value ;
+            
         }
 
+        // return $field_marks;
         $result->field_marks = json_encode($field_marks);
-        $result->total_marks = $totalMarks;
+        $result->save();
+
+        $this->Resultcalculation($result);
+        
+       
+        return $result;
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\result  $result
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(result $result)
+    {
+        //
+    }
+
+
+    public function Resultcalculation(result $result)
+    {
+        // return $result;
+        $totalMarks = 0;
+        $staticMarks = 0;
+        $dynamicMarks = 0;
+        $staticFieldMarks = 0;
+        $dynamicFieldMarks = 0;
+
+        $field_marks = json_decode($result->field_marks);
+
+        foreach ($field_marks as $key => $fieldList) {
+            if ($fieldList->is_dynamic == 1) {
+
+                $dynamicMarks += $fieldList->marks;;
+                $dynamicFieldMarks += $fieldList->field_marks;
+            } else {
+
+                $staticMarks += $fieldList->marks;
+                $staticFieldMarks += $fieldList->field_marks;
+            }
+        }
+
+        $course_marks = course::find($result->course_id)->marks;
+        $totalMarks = (($course_marks - $staticFieldMarks) / $dynamicFieldMarks) * $dynamicMarks + $staticMarks;
+        //  return compact('totalMarks','staticFieldMarks','staticMarks','dynamicFieldMarks','dynamicMarks' );
+
+         $result->field_marks = json_encode($field_marks);
+        $result->total_marks =  $totalMarks;
         $result->save();
 
 
-
-
-
-        $course_marks = course::find($result->course_id)->marks;
-        $totalMarks = ($totalMarks / $course_marks) * 100;
         if ($totalMarks >= 80) {
             $result->point = 4;
             $result->letter = "A+";
@@ -232,19 +226,10 @@ class ResultController extends Controller
         }
 
         $result->save();
-        return $result;
 
-        return redirect(route('results.index'));
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\result  $result
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(result $result)
-    {
-        //
+
+
+         
     }
 }

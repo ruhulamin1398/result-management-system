@@ -71,14 +71,14 @@
                         </td>
                         <td class="nk-tb-col">{{$i++}}</td>
                         <td class="nk-tb-col">{{$result->student->reg}}</td>
-
+   
 
                         @foreach($fields as $key => $field)
 
                         <!-- if this is a new field it will be initialized  -->
 
                         @if(!isset($field_marks->$key ))
-                        @php($field_marks->$key=0 )
+                        @php($field_marks->$key->field_marks=0 )
                         @endif
 
 
@@ -86,13 +86,13 @@
                         <td>
                             <div class="form-group">
                                 <div class="form-control-wrap">
-                                    <input type="text" name="{{$key}}" class="form-control" id="b_marks{{$result->id}}" value="{{$field_marks->$key}}">
+                                    <input type="text" name="field[{{$key}}]" class="form-control" id="b_marks{{$result->id}}" value="{{$field_marks->$key->marks}}">
                                 </div>
                             </div>
                         </td>
                         @endforeach
 
-
+  
                         <td class="nk-tb-col" id="total_marks{{$result->id}}" > {{$result->total_marks}} </td>
                         <td class="nk-tb-col" id="point{{$result->id}}" > {{$result->point}} </td>
 
@@ -125,121 +125,39 @@
 
 
 
-<style>
-    
-.modal-confirm {		
-	color: #636363;
-	width: 325px;
-	font-size: 14px;
-}
-.modal-confirm .modal-content {
-	padding: 20px;
-	border-radius: 5px;
-	border: none;
-}
-.modal-confirm .modal-header {
-	border-bottom: none;   
-	position: relative;
-}
-.modal-confirm h4 {
-	text-align: center;
-	font-size: 26px;
-	margin: 30px 0 -15px;
-}
-.modal-confirm .form-control, .modal-confirm .btn {
-	min-height: 40px;
-	border-radius: 3px; 
-}
-.modal-confirm .close {
-	position: absolute;
-	top: -5px;
-	right: -5px;
-}	
-.modal-confirm .modal-footer {
-	border: none;
-	text-align: center;
-	border-radius: 5px;
-	font-size: 13px;
-}	
-.modal-confirm .icon-box {
-	color: #fff;		
-	position: absolute;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-	top: -70px;
-	width: 95px;
-	height: 95px;
-	border-radius: 50%;
-	z-index: 9;
-	background: #82ce34;
-	padding: 15px;
-	text-align: center;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-}
-.modal-confirm .icon-box i {
-	font-size: 58px;
-	position: relative;
-	top: 3px;
-}
-.modal-confirm.modal-dialog {
-	margin-top: 80px;
-}
-.modal-confirm .btn {
-	color: #fff;
-	border-radius: 4px;
  
-	text-decoration: none;
-	transition: all 0.4s;
-	line-height: normal;
-	border: none;
-}
-.modal-confirm .btn:hover, .modal-confirm .btn:focus {
-	background: #6fb32b;
-	outline: none;
-}
-.trigger-btn {
-	display: inline-block;
-	margin: 100px auto;
-}
-
-</style>
-
-
-
-<!-- Modal HTML -->
-<div id="resultUpdatedModal" class="modal fade">
-	<div class="modal-dialog modal-confirm">
-		<div class="modal-content">
-			<div class="modal-header">
-				<div class="icon-box">
-					<i class="material-icons">&#xE876;</i>
-				</div>				
-				<h4 class="modal-title w-100">Awesome!</h4>	
-			</div>
-			<div class="modal-body">
-				<p class="text-center">Result Updated</p>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-primary btn-block" data-dismiss="modal">OK</button>
-			</div>
-		</div>
-	</div>
-</div> 
-
-
-
-
-
-
-<!-- @method("PUT") -->
-
-
-
 @endsection
 
 
+
+
+
+
+
+@section('additional')
+<div class="toast p-2 bg-success" data-autohide="false" 
+style="
+    right: 10px;
+    bottom: 10px;
+    position: absolute;
+    ">
+    <div class="toast-header bg-success  text-white">
+      <strong class="mr-auto text-white">Result Update Done</strong>
+      <!-- <small class="text-muted">5 mins ago</small> -->
+      <button type="button" class="ml-2 mb-1 close text-white closeToast" data-dismiss="toast">&times;</button>
+    </div>
+    <!-- <div class="toast-body">
+      Some text inside the toast body
+    </div> -->
+  </div>
+@endsection
+
+
+
 @section('js')
+
+
+
 <script>
     function updateresult(id) {
         console.log(('#updateform' + id))
@@ -285,13 +203,12 @@
                 $('#total_marks' + id).text(data.total_marks)
                 $('#point' + id).text(data.point) 
                 
-                $('#resultUpdatedModal' ).modal(); 
-                setTimeout(function() {
-                 
-    }, 3000);
-    $('#resultUpdatedModal' ).modal('hide');
+                $('.toast').toast('show');
 
-                // viewSupplierData(supplier);
+                setInterval(function () { $('.closeToast').trigger( "click" );}, 2000);
+         
+                 
+ 
             },
             error: function(data) {
 

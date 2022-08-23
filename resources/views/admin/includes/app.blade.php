@@ -55,6 +55,8 @@
                 <!-- footer @s -->
                 <div class="nk-footer">
                 @include('admin.includes.footer')
+                
+                @yield('additional')
                 </div>
                 <!-- footer @e -->
             </div>
@@ -64,7 +66,7 @@
     </div>
     <!-- app-root @e -->
     <!-- JavaScript -->
-   
+
     <script src="{{asset('backend/assets/js/bundle.js?ver=2.4.0')}}"></script>
     <script src="{{asset('backend/assets/js/scripts.js?ver=2.4.0')}}"></script>
     <script src="{{asset('backend/assets/js/charts/gd-default.js?ver=2.4.0')}}"></script>

@@ -23,20 +23,20 @@ class CreateResultsTable extends Migration
             $table->unsignedBigInteger('registered_at')->default(0);  // which semester  register as drop the exam
             $table->unsignedBigInteger('is_registered')->default(1); // 1 means it is registered  otherwise user are not interested to register this for this semester 
 
-            $table->double('attendance_marks',8,2)->default(0);
-            $table->double('class_test_marks',8,2)->default(0);
+            // $table->double('attendance_marks',8,2)->default(0);
+            // $table->double('class_test_marks',8,2)->default(0);
             
-            $table->string('a_code',8,2)->default(0);
-            $table->double('a_marks',8,2)->default(0);
+            // $table->string('a_code',8,2)->default(0);
+            // $table->double('a_marks',8,2)->default(0);
 
-            $table->string('b_code',8,2)->default(0);
-            $table->double('b_marks',8,2)->default(0);
+            // $table->string('b_code',8,2)->default(0);
+            // $table->double('b_marks',8,2)->default(0);
 
-            $table->json('field_marks')->default("{\"201256\":\"0\"}");
+            $table->json('field_marks')->default("{}");
 
 
 
-            $table->double('writtent',8,2)->default(0);
+            // $table->double('writtent',8,2)->default(0);
             $table->double('total_marks',8,2)->default(0);
             $table->string('letter')->default('F');
             $table->double('point',8,2)->default(0);
