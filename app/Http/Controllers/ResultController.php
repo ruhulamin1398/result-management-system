@@ -184,6 +184,9 @@ class ResultController extends Controller
             }
         }
 
+        if( $dynamicFieldMarks ==0 ){
+            $dynamicFieldMarks=1;
+        }
         $course_marks = course::find($result->course_id)->marks;
         $totalMarks = (($course_marks - $staticFieldMarks) / $dynamicFieldMarks) * $dynamicMarks + $staticMarks;
         //  return compact('totalMarks','staticFieldMarks','staticMarks','dynamicFieldMarks','dynamicMarks' );

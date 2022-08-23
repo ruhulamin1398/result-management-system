@@ -213,7 +213,7 @@ style="
             error: function(data) {
 
                 $('#pageloader').hide();
-                alert("Failed order ..... Try Again !!!!!!!!!!!")
+                alert("Failed update ..... Try Again !!!!!!!!!!!")
                 console.log('An error occurred.');
                 console.log(data);
             },
