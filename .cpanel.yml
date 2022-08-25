@@ -2,7 +2,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/mumixhqm/websharkit.com
+    - export DEPLOYPATH=/home/ruhulamin/result.byteend.com
     - /bin/cp -r * $DEPLOYPATH #copy all from root
     # - /bin/cp -r ./public/* $DEPLOYPATH/
     # - /bin/cp ln -nfs $DEPLOYPATH/public $DEPLOYPATH
