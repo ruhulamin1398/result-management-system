@@ -143,11 +143,27 @@ Print
         </button>
       </div>
       <div class="modal-body">
-      <a   href="{{route('print-pdfs.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=1" target="_blank" class="btn btn-primary">First Year</a>
+    <h5>Mark Sheet</h5>
+      <a  href="{{route('print-pdfs.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=1" target="_blank" class="btn btn-primary">First Year</a>
       <a href="{{route('print-pdfs.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=2" target="_blank" class="btn btn-primary">Second Year</a>
       <a href="{{route('print-pdfs.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=3" target="_blank" class="btn btn-primary">Third Year</a>
       <a href="{{route('print-pdfs.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=4" target="_blank" class="btn btn-primary">Fourth Year</a>
-      </div>
+      
+
+      <br>
+      <br>
+
+      <h5> GPA & CGPA </h5>
+      <a  href="{{route('print-cgpas.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=1" target="_blank" class="btn btn-primary">First Year</a>
+      <a href="{{route('print-cgpas.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=2" target="_blank" class="btn btn-primary">Second Year</a>
+      <a href="{{route('print-cgpas.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=3" target="_blank" class="btn btn-primary">Third Year</a>
+      <a href="{{route('print-cgpas.index')}}?department_id={{$department->id}}&&session_id={{$studySession->id}}&&year=4" target="_blank" class="btn btn-primary">Fourth Year</a>
+      
+
+      <br>
+      <br>
+
+    </div>
       
     </div>
   </div>

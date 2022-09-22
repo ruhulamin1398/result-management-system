@@ -12,6 +12,7 @@ use App\Http\Controllers\SessionSemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudySessionController;
 use App\Http\Controllers\printPdfController;
+use App\Http\Controllers\SessionSemesterCpgaController;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,7 @@ use Inertia\Inertia;
 
  
  Route::resource('print-pdfs', printPdfController::class);
+ Route::resource('print-cgpas', SessionSemesterCpgaController::class);
 
  
  Route::get('download/student/{id}',function(){

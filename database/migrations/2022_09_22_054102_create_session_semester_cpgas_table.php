@@ -24,6 +24,7 @@ class CreateSessionSemesterCpgasTable extends Migration
             $table->double('CGPA')->default(0);
             $table->double('semester_credit')->default(0);
             $table->double('total_credit')->default(0);
+            $table->double('completed_credit')->default(0);
 
             $table->timestamps();
         });
