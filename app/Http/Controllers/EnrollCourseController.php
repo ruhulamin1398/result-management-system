@@ -41,6 +41,7 @@ class EnrollCourseController extends Controller
                 if (is_null($isExist)) {
                     $result = new  result;
                     $result->semester_id = $courseOffering->semester_id;
+                    $result->department_id = $profile->department_id;
                     $result->registered_at = $courseOffering->semester_id;
                     $result->course_id = $course->course_id;
                     $result->student_id = $profile->id;
@@ -151,6 +152,7 @@ class EnrollCourseController extends Controller
 
                             $result = new  result;
                             $result->semester_id = $course->semester_id;
+                            $result->department_id = $profile->department_id;
                             $result->course_id = $course->course_id;
                             $result->student_id = $profile->id;
                             $result->registered_at = $currentSemester;

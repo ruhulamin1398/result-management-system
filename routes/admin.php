@@ -8,8 +8,10 @@ use App\Http\Controllers\FieldController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\SessionSemesterCourseController;
+use App\Http\Controllers\SessionSemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudySessionController;
+use App\Http\Controllers\printPdfController;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -39,11 +41,16 @@ use Inertia\Inertia;
  Route::resource('study_sessions', StudySessionController::class);
  Route::resource('department_study_sessions', DepartmentStudySessionController::class);
  Route::resource('results', ResultController::class);
+ Route::resource('session_semester', SessionSemesterController::class);
  Route::resource('session_semester_courses', SessionSemesterCourseController::class);
 
  
  Route::resource('course-offerings', CourseOfferingController::class);
  Route::resource('fields', FieldController::class);
+
+ 
+ Route::resource('print-pdfs', printPdfController::class);
+
  
  Route::get('download/student/{id}',function(){
 

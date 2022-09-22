@@ -46,7 +46,7 @@
                     <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">student </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th> 
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th>  
 
                     </tr>
                 </thead>
@@ -58,7 +58,7 @@
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">SL</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Title </span></th> 
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">student </span></th>
-                        <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th>  
+                        <th class="nk-tb-col tb-col-md"><span class="sub-text">result </span></th>   
 
 
                     </tr>
@@ -75,7 +75,7 @@
                         <td class="nk-tb-col">{{$studySession->session->title}}</td>
                         <td class="nk-tb-col">  <a href="{{route('students.index')}}?department_id={{$department->id}}&&session_id={{$studySession->session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">View</a>  </td>
                         <td class="nk-tb-col">  <a href="{{route('results.index')}}?department_id={{$department->id}}&&session_id={{$studySession->session->id}}"  class="btn btn-success btn-sm p-1" style="padding: 2px;">result</a>  </td>
-                        
+                                               
                     </tr>
                     @endif
                     @endforeach

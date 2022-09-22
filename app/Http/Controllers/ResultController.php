@@ -7,6 +7,7 @@ use App\Models\department;
 use App\Models\result;
 use App\Models\semester;
 use App\Models\sessionSemesterCourse;
+use App\Models\sessionSemester;
 use App\Models\studySession;
 use Illuminate\Http\Request;
 
@@ -23,10 +24,25 @@ class ResultController extends Controller
         $department = department::find($request->department_id);
         $studySession = studySession::find($request->session_id);
         $semesters = semester::all();
+       foreach( $semesters as $semester ){
+       $exam=  sessionSemester::where('department_id', $request->department_id)
+       ->where('session_id', $request->session_id)
+       ->where('semester_id', $semester->id)
+       ->first();
+ 
+  if(is_null($exam)){
+    $exam = new sessionSemester();
+    $exam->department_id = $request->department_id;
+    $exam->session_id = $request->session_id;
+    $exam->semester_id = $semester->id;
+    $exam ->save();
+
+  }
+  $semester->exam = $exam;
+       }
 
         $courses = sessionSemesterCourse::where('department_id', $request->department_id)->where('session_id', $request->session_id)->where('is_Active', 1)->get()->groupBy('semester_id');
-
-
+//  return $courses;
         return view('admin.result.index', compact('courses', 'semesters', 'studySession', 'department'));
         //
     }

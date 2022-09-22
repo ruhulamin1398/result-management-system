@@ -77,7 +77,7 @@
 
                 <p>
                <a href="{{route('students.edit',$student->id)}}" class="btn btn-primary">Edit Profile</a>
-               <a href="{{route('downloadStudentPdf',$student->id)}}" class="btn btn-primary">Download</a>
+               <!-- <a href="{{route('downloadStudentPdf',$student->id)}}" class="btn btn-primary">Download</a> -->
 
                 </p>
             </div>
